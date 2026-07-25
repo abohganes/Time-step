@@ -4,6 +4,7 @@ import { Pressable, StyleSheet, View } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
 import { Checkbox } from '@/components/ui/Checkbox';
 import { Spacing } from '@/constants/theme';
+import { useDateLocale } from '@/lib/i18n/dateLocale';
 import type { Task } from '@/types/database';
 
 type TaskRowProps = {
@@ -13,6 +14,7 @@ type TaskRowProps = {
 };
 
 export function TaskRow({ task, onToggle, onPress }: TaskRowProps) {
+  const dateLocale = useDateLocale();
   const overdue = !task.is_completed && task.due_date && isPast(new Date(task.due_date));
 
   return (
@@ -30,7 +32,7 @@ export function TaskRow({ task, onToggle, onPress }: TaskRowProps) {
             type="small"
             themeColor={overdue ? undefined : 'textSecondary'}
             style={overdue ? styles.overdue : undefined}>
-            {format(new Date(task.due_date), 'MMM d, h:mm a')}
+            {format(new Date(task.due_date), 'MMM d, h:mm a', { locale: dateLocale })}
           </ThemedText>
         ) : null}
       </View>

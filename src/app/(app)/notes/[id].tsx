@@ -1,6 +1,7 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useLocalSearchParams, useNavigation, useRouter } from 'expo-router';
 import { useEffect, useRef, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, Pressable, StyleSheet, TextInput } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -10,8 +11,13 @@ import { useDeleteNote, useNotes, useUpdateNote } from '@/hooks/useNotes';
 import { useTheme } from '@/hooks/use-theme';
 
 const AUTOSAVE_DELAY_MS = 800;
+// Matches the DB column default (schema.sql: `title text not null default 'Untitled'`) —
+// kept as a fixed English sentinel regardless of UI language, since it's a stored value
+// compared with `===`, not display text.
+const UNTITLED_SENTINEL = 'Untitled';
 
 export default function NoteEditorScreen() {
+  const { t } = useTranslation();
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const navigation = useNavigation();
@@ -29,7 +35,7 @@ export default function NoteEditorScreen() {
   useEffect(() => {
     if (!note || hydrated.current) return;
     hydrated.current = true;
-    setTitle(note.title === 'Untitled' ? '' : note.title);
+    setTitle(note.title === UNTITLED_SENTINEL ? '' : note.title);
     setContent(note.content);
   }, [note]);
 
@@ -49,7 +55,7 @@ export default function NoteEditorScreen() {
     saveTimeout.current = setTimeout(() => {
       updateNote.mutate({
         id: id!,
-        input: { title: nextTitle.trim() || 'Untitled', content: nextContent },
+        input: { title: nextTitle.trim() || UNTITLED_SENTINEL, content: nextContent },
       });
     }, AUTOSAVE_DELAY_MS);
   }
@@ -84,14 +90,14 @@ export default function NoteEditorScreen() {
         <TextInput
           value={title}
           onChangeText={handleTitleChange}
-          placeholder="Untitled"
+          placeholder={t('notes.untitled')}
           placeholderTextColor={theme.textSecondary}
           style={[styles.title, { color: theme.text }]}
         />
         <TextInput
           value={content}
           onChangeText={handleContentChange}
-          placeholder="Start writing..."
+          placeholder={t('notes.startWriting')}
           placeholderTextColor={theme.textSecondary}
           style={[styles.content, { color: theme.text }]}
           multiline

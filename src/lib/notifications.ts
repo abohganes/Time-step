@@ -2,6 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Notifications from 'expo-notifications';
 import { Platform } from 'react-native';
 
+import i18n from '@/lib/i18n';
 import type { Habit, Task } from '@/types/database';
 
 Notifications.setNotificationHandler({
@@ -51,7 +52,7 @@ export async function scheduleTaskNotification(task: Task) {
   if (!granted) return;
 
   const identifier = await Notifications.scheduleNotificationAsync({
-    content: { title: 'Task due', body: task.title },
+    content: { title: i18n.t('notif.taskDueTitle'), body: task.title },
     trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: dueDate },
   });
   await AsyncStorage.setItem(storageKey('task', task.id), identifier);
@@ -75,7 +76,7 @@ export async function scheduleHabitReminder(habit: Habit) {
   if (!granted) return;
 
   const identifier = await Notifications.scheduleNotificationAsync({
-    content: { title: 'Habit reminder', body: habit.title },
+    content: { title: i18n.t('notif.habitReminderTitle'), body: habit.title },
     trigger: { type: Notifications.SchedulableTriggerInputTypes.DAILY, hour, minute },
   });
   await AsyncStorage.setItem(storageKey('habit', habit.id), identifier);

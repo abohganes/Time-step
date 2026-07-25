@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Link, useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, FlatList, Pressable, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -12,6 +13,7 @@ import { BottomTabInset, Spacing } from '@/constants/theme';
 import { useTasks, useUpdateTask } from '@/hooks/useTasks';
 
 export default function TasksScreen() {
+  const { t } = useTranslation();
   const { data: tasks, isLoading, isError, error, refetch, isRefetching } = useTasks();
   const updateTask = useUpdateTask();
   const router = useRouter();
@@ -21,7 +23,7 @@ export default function TasksScreen() {
       <SafeAreaView style={styles.flex} edges={['top']}>
         <ThemedView style={styles.header}>
           <ThemedText type="title" style={styles.title}>
-            Tasks
+            {t('tasks.title')}
           </ThemedText>
           <Link href="/(app)/tasks/new" asChild>
             <Pressable hitSlop={8}>
@@ -41,7 +43,7 @@ export default function TasksScreen() {
             contentContainerStyle={[styles.list, tasks?.length === 0 && styles.flex]}
             refreshing={isRefetching}
             onRefresh={refetch}
-            ListEmptyComponent={<EmptyState message="No tasks yet. Tap + to add one." />}
+            ListEmptyComponent={<EmptyState message={t('tasks.empty')} />}
             renderItem={({ item }) => (
               <TaskRow
                 task={item}

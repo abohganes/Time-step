@@ -1,11 +1,13 @@
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { format } from 'date-fns';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Platform, Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
 import { Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
+import { useDateLocale } from '@/lib/i18n/dateLocale';
 
 type DueDateFieldProps = {
   label: string;
@@ -14,7 +16,9 @@ type DueDateFieldProps = {
 };
 
 export function DueDateField({ label, value, onChange }: DueDateFieldProps) {
+  const { t } = useTranslation();
   const theme = useTheme();
+  const dateLocale = useDateLocale();
   const [step, setStep] = useState<'closed' | 'date' | 'time'>('closed');
   const [pendingDate, setPendingDate] = useState<Date | null>(null);
 
@@ -57,13 +61,13 @@ export function DueDateField({ label, value, onChange }: DueDateFieldProps) {
           onPress={openPicker}
           style={[styles.field, { backgroundColor: theme.backgroundElement }]}>
           <ThemedText type="default">
-            {value ? format(value, 'MMM d, yyyy · h:mm a') : 'No due date'}
+            {value ? format(value, 'MMM d, yyyy · h:mm a', { locale: dateLocale }) : t('tasks.noDueDate')}
           </ThemedText>
         </Pressable>
         {value ? (
           <Pressable onPress={() => onChange(null)} hitSlop={8}>
             <ThemedText type="link" style={{ color: '#e5484d' }}>
-              Clear
+              {t('common.clear')}
             </ThemedText>
           </Pressable>
         ) : null}

@@ -1,0 +1,76 @@
+{
+  "common": {
+    "save": "حفظ",
+    "clear": "مسح",
+    "titleLabel": "العنوان",
+    "descriptionLabel": "الوصف"
+  },
+  "auth": {
+    "welcomeBack": "مرحباً بعودتك",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "logIn": "تسجيل الدخول",
+    "noAccount": "ليس لديك حساب؟ أنشئ حساباً",
+    "createAccount": "إنشاء حساب",
+    "checkEmail": "تحقق من بريدك الإلكتروني لتأكيد حسابك، ثم سجّل الدخول.",
+    "signUp": "إنشاء حساب",
+    "haveAccount": "لديك حساب بالفعل؟ سجّل الدخول"
+  },
+  "today": {
+    "title": "اليوم",
+    "tasksSection": "المهام",
+    "noTasksToday": "لا يوجد شيء مستحق اليوم.",
+    "habitsSection": "العادات",
+    "noHabits": "لا توجد عادات بعد."
+  },
+  "tasks": {
+    "title": "المهام",
+    "empty": "لا توجد مهام بعد. اضغط + لإضافة واحدة.",
+    "newTitle": "مهمة جديدة",
+    "editTitle": "تعديل المهمة",
+    "dueDate": "تاريخ الاستحقاق",
+    "noDueDate": "لا يوجد تاريخ استحقاق",
+    "deleteTask": "حذف المهمة"
+  },
+  "habits": {
+    "title": "العادات",
+    "empty": "لا توجد عادات بعد. اضغط + لإضافة واحدة.",
+    "newTitle": "عادة جديدة",
+    "editTitle": "تعديل العادة",
+    "dailyReminder": "تذكير يومي",
+    "noReminder": "لا يوجد تذكير",
+    "deleteHabit": "حذف العادة"
+  },
+  "notes": {
+    "title": "الملاحظات",
+    "empty": "لا توجد ملاحظات بعد. اضغط + لإضافة واحدة.",
+    "untitled": "بلا عنوان",
+    "startWriting": "ابدأ الكتابة..."
+  },
+  "settings": {
+    "title": "الإعدادات",
+    "signedInAs": "مسجّل الدخول باسم",
+    "notifications": "الإشعارات",
+    "enabled": "مفعّلة",
+    "denied": "مرفوضة",
+    "notRequested": "لم يُطلب بعد",
+    "enableNotifications": "تفعيل الإشعارات",
+    "signOut": "تسجيل الخروج",
+    "language": "اللغة"
+  },
+  "errors": {
+    "somethingWrong": "حدث خطأ ما: {{message}}",
+    "failedToLoad": "فشل التحميل"
+  },
+  "notif": {
+    "taskDueTitle": "موعد استحقاق مهمة",
+    "habitReminderTitle": "تذكير بعادة"
+  },
+  "tabs": {
+    "today": "اليوم",
+    "tasks": "المهام",
+    "habits": "العادات",
+    "notes": "الملاحظات",
+    "settings": "الإعدادات"
+  }
+}

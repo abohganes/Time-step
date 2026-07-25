@@ -16,5 +16,5 @@ export function StreakBadge({ streak }: { streak: number }) {
 }
 
 const styles = StyleSheet.create({
-  container: { flexDirection: 'row', alignItems: 'center', gap: 2, marginLeft: Spacing.two },
+  container: { flexDirection: 'row', alignItems: 'center', gap: 2, marginStart: Spacing.two },
 });

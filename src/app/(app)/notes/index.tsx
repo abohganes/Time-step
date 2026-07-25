@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, FlatList, Pressable, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -12,6 +13,7 @@ import { BottomTabInset, Spacing } from '@/constants/theme';
 import { useCreateNote, useNotes } from '@/hooks/useNotes';
 
 export default function NotesScreen() {
+  const { t } = useTranslation();
   const { data: notes, isLoading, isError, error, refetch, isRefetching } = useNotes();
   const createNote = useCreateNote();
   const router = useRouter();
@@ -26,7 +28,7 @@ export default function NotesScreen() {
       <SafeAreaView style={styles.flex} edges={['top']}>
         <ThemedView style={styles.header}>
           <ThemedText type="title" style={styles.title}>
-            Notes
+            {t('notes.title')}
           </ThemedText>
           <Pressable hitSlop={8} onPress={handleCreate} disabled={createNote.isPending}>
             <Ionicons name="add-circle" size={32} color="#3c87f7" />
@@ -44,7 +46,7 @@ export default function NotesScreen() {
             contentContainerStyle={[styles.list, notes?.length === 0 && styles.flex]}
             refreshing={isRefetching}
             onRefresh={refetch}
-            ListEmptyComponent={<EmptyState message="No notes yet. Tap + to add one." />}
+            ListEmptyComponent={<EmptyState message={t('notes.empty')} />}
             renderItem={({ item }) => (
               <NoteRow note={item} onPress={() => router.push(`/(app)/notes/${item.id}`)} />
             )}

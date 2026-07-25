@@ -1,0 +1,76 @@
+{
+  "common": {
+    "save": "Enregistrer",
+    "clear": "Effacer",
+    "titleLabel": "Titre",
+    "descriptionLabel": "Description"
+  },
+  "auth": {
+    "welcomeBack": "Bon retour",
+    "email": "E-mail",
+    "password": "Mot de passe",
+    "logIn": "Se connecter",
+    "noAccount": "Pas de compte ? Inscrivez-vous",
+    "createAccount": "Créer un compte",
+    "checkEmail": "Vérifiez votre e-mail pour confirmer votre compte, puis connectez-vous.",
+    "signUp": "S'inscrire",
+    "haveAccount": "Déjà un compte ? Connectez-vous"
+  },
+  "today": {
+    "title": "Aujourd'hui",
+    "tasksSection": "Tâches",
+    "noTasksToday": "Rien à faire aujourd'hui.",
+    "habitsSection": "Habitudes",
+    "noHabits": "Aucune habitude pour le moment."
+  },
+  "tasks": {
+    "title": "Tâches",
+    "empty": "Aucune tâche pour le moment. Appuyez sur + pour en ajouter une.",
+    "newTitle": "Nouvelle tâche",
+    "editTitle": "Modifier la tâche",
+    "dueDate": "Date d'échéance",
+    "noDueDate": "Aucune date d'échéance",
+    "deleteTask": "Supprimer la tâche"
+  },
+  "habits": {
+    "title": "Habitudes",
+    "empty": "Aucune habitude pour le moment. Appuyez sur + pour en ajouter une.",
+    "newTitle": "Nouvelle habitude",
+    "editTitle": "Modifier l'habitude",
+    "dailyReminder": "Rappel quotidien",
+    "noReminder": "Aucun rappel",
+    "deleteHabit": "Supprimer l'habitude"
+  },
+  "notes": {
+    "title": "Notes",
+    "empty": "Aucune note pour le moment. Appuyez sur + pour en ajouter une.",
+    "untitled": "Sans titre",
+    "startWriting": "Commencez à écrire..."
+  },
+  "settings": {
+    "title": "Réglages",
+    "signedInAs": "Connecté en tant que",
+    "notifications": "Notifications",
+    "enabled": "Activées",
+    "denied": "Refusées",
+    "notRequested": "Non demandées",
+    "enableNotifications": "Activer les notifications",
+    "signOut": "Se déconnecter",
+    "language": "Langue"
+  },
+  "errors": {
+    "somethingWrong": "Une erreur s'est produite : {{message}}",
+    "failedToLoad": "Échec du chargement"
+  },
+  "notif": {
+    "taskDueTitle": "Tâche à échéance",
+    "habitReminderTitle": "Rappel d'habitude"
+  },
+  "tabs": {
+    "today": "Aujourd'hui",
+    "tasks": "Tâches",
+    "habits": "Habitudes",
+    "notes": "Notes",
+    "settings": "Réglages"
+  }
+}

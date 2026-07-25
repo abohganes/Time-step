@@ -1,5 +1,6 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -11,6 +12,7 @@ import { Spacing } from '@/constants/theme';
 import { useDeleteHabit, useHabits, useUpdateHabit } from '@/hooks/useHabits';
 
 export default function EditHabitScreen() {
+  const { t } = useTranslation();
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const { data: habits } = useHabits();
@@ -62,23 +64,27 @@ export default function EditHabitScreen() {
           style={styles.flex}
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
           <ThemedView style={styles.form}>
-            <TextField label="Title" value={title} onChangeText={setTitle} />
+            <TextField label={t('common.titleLabel')} value={title} onChangeText={setTitle} />
             <TextField
-              label="Description"
+              label={t('common.descriptionLabel')}
               value={description}
               onChangeText={setDescription}
               multiline
               style={styles.multiline}
             />
-            <ReminderTimeField label="Daily reminder" value={reminderTime} onChange={setReminderTime} />
+            <ReminderTimeField
+              label={t('habits.dailyReminder')}
+              value={reminderTime}
+              onChange={setReminderTime}
+            />
             <Button
-              title="Save"
+              title={t('common.save')}
               onPress={handleSave}
               loading={updateHabit.isPending}
               disabled={!title.trim()}
             />
             <Button
-              title="Delete habit"
+              title={t('habits.deleteHabit')}
               variant="danger"
               onPress={handleDelete}
               loading={deleteHabit.isPending}

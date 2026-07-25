@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Link, useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, FlatList, Pressable, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -13,6 +14,7 @@ import { computeStreak, todayKey, useHabitLogs, useToggleHabitToday } from '@/ho
 import { useHabits } from '@/hooks/useHabits';
 
 export default function HabitsScreen() {
+  const { t } = useTranslation();
   const { data: habits, isLoading, isError, error, refetch, isRefetching } = useHabits();
   const { data: logs } = useHabitLogs();
   const toggleToday = useToggleHabitToday();
@@ -25,7 +27,7 @@ export default function HabitsScreen() {
       <SafeAreaView style={styles.flex} edges={['top']}>
         <ThemedView style={styles.header}>
           <ThemedText type="title" style={styles.title}>
-            Habits
+            {t('habits.title')}
           </ThemedText>
           <Link href="/(app)/habits/new" asChild>
             <Pressable hitSlop={8}>
@@ -45,7 +47,7 @@ export default function HabitsScreen() {
             contentContainerStyle={[styles.list, habits?.length === 0 && styles.flex]}
             refreshing={isRefetching}
             onRefresh={refetch}
-            ListEmptyComponent={<EmptyState message="No habits yet. Tap + to add one." />}
+            ListEmptyComponent={<EmptyState message={t('habits.empty')} />}
             renderItem={({ item }) => {
               const doneToday = (logs ?? []).some(
                 (log) => log.habit_id === item.id && log.completed_date === today

@@ -1,0 +1,76 @@
+{
+  "common": {
+    "save": "Save",
+    "clear": "Clear",
+    "titleLabel": "Title",
+    "descriptionLabel": "Description"
+  },
+  "auth": {
+    "welcomeBack": "Welcome back",
+    "email": "Email",
+    "password": "Password",
+    "logIn": "Log in",
+    "noAccount": "Don't have an account? Sign up",
+    "createAccount": "Create account",
+    "checkEmail": "Check your email to confirm your account, then log in.",
+    "signUp": "Sign up",
+    "haveAccount": "Already have an account? Log in"
+  },
+  "today": {
+    "title": "Today",
+    "tasksSection": "Tasks",
+    "noTasksToday": "Nothing due today.",
+    "habitsSection": "Habits",
+    "noHabits": "No habits yet."
+  },
+  "tasks": {
+    "title": "Tasks",
+    "empty": "No tasks yet. Tap + to add one.",
+    "newTitle": "New task",
+    "editTitle": "Edit task",
+    "dueDate": "Due date",
+    "noDueDate": "No due date",
+    "deleteTask": "Delete task"
+  },
+  "habits": {
+    "title": "Habits",
+    "empty": "No habits yet. Tap + to add one.",
+    "newTitle": "New habit",
+    "editTitle": "Edit habit",
+    "dailyReminder": "Daily reminder",
+    "noReminder": "No reminder",
+    "deleteHabit": "Delete habit"
+  },
+  "notes": {
+    "title": "Notes",
+    "empty": "No notes yet. Tap + to add one.",
+    "untitled": "Untitled",
+    "startWriting": "Start writing..."
+  },
+  "settings": {
+    "title": "Settings",
+    "signedInAs": "Signed in as",
+    "notifications": "Notifications",
+    "enabled": "Enabled",
+    "denied": "Denied",
+    "notRequested": "Not requested",
+    "enableNotifications": "Enable notifications",
+    "signOut": "Sign out",
+    "language": "Language"
+  },
+  "errors": {
+    "somethingWrong": "Something went wrong: {{message}}",
+    "failedToLoad": "Failed to load"
+  },
+  "notif": {
+    "taskDueTitle": "Task due",
+    "habitReminderTitle": "Habit reminder"
+  },
+  "tabs": {
+    "today": "Today",
+    "tasks": "Tasks",
+    "habits": "Habits",
+    "notes": "Notes",
+    "settings": "Settings"
+  }
+}

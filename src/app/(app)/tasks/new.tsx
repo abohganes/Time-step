@@ -1,5 +1,6 @@
 import { useRouter } from 'expo-router';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { KeyboardAvoidingView, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -11,6 +12,7 @@ import { Spacing } from '@/constants/theme';
 import { useCreateTask } from '@/hooks/useTasks';
 
 export default function NewTaskScreen() {
+  const { t } = useTranslation();
   const router = useRouter();
   const createTask = useCreateTask();
   const [title, setTitle] = useState('');
@@ -34,17 +36,17 @@ export default function NewTaskScreen() {
           style={styles.flex}
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
           <ThemedView style={styles.form}>
-            <TextField label="Title" value={title} onChangeText={setTitle} autoFocus />
+            <TextField label={t('common.titleLabel')} value={title} onChangeText={setTitle} autoFocus />
             <TextField
-              label="Description"
+              label={t('common.descriptionLabel')}
               value={description}
               onChangeText={setDescription}
               multiline
               style={styles.multiline}
             />
-            <DueDateField label="Due date" value={dueDate} onChange={setDueDate} />
+            <DueDateField label={t('tasks.dueDate')} value={dueDate} onChange={setDueDate} />
             <Button
-              title="Save"
+              title={t('common.save')}
               onPress={handleSave}
               loading={createTask.isPending}
               disabled={!title.trim()}

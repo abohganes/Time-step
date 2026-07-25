@@ -1,5 +1,6 @@
 import DateTimePicker from '@react-native-community/datetimepicker';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
@@ -19,12 +20,13 @@ function timeStringToDate(value: string): Date {
   return date;
 }
 
-function formatTimeLabel(value: string): string {
+function formatTimeLabel(value: string, locale: string): string {
   const date = timeStringToDate(value);
-  return date.toLocaleTimeString([], { hour: 'numeric', minute: '2-digit' });
+  return date.toLocaleTimeString(locale, { hour: 'numeric', minute: '2-digit' });
 }
 
 export function ReminderTimeField({ label, value, onChange }: ReminderTimeFieldProps) {
+  const { t, i18n } = useTranslation();
   const theme = useTheme();
   const [open, setOpen] = useState(false);
 
@@ -35,12 +37,14 @@ export function ReminderTimeField({ label, value, onChange }: ReminderTimeFieldP
         <Pressable
           onPress={() => setOpen(true)}
           style={[styles.field, { backgroundColor: theme.backgroundElement }]}>
-          <ThemedText type="default">{value ? formatTimeLabel(value) : 'No reminder'}</ThemedText>
+          <ThemedText type="default">
+            {value ? formatTimeLabel(value, i18n.language) : t('habits.noReminder')}
+          </ThemedText>
         </Pressable>
         {value ? (
           <Pressable onPress={() => onChange(null)} hitSlop={8}>
             <ThemedText type="link" style={{ color: '#e5484d' }}>
-              Clear
+              {t('common.clear')}
             </ThemedText>
           </Pressable>
         ) : null}

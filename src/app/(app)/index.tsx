@@ -1,5 +1,6 @@
 import { format } from 'date-fns';
 import { useRouter } from 'expo-router';
+import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, RefreshControl, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -13,8 +14,11 @@ import { BottomTabInset, Spacing } from '@/constants/theme';
 import { computeStreak, todayKey, useToggleHabitToday } from '@/hooks/useHabitLogs';
 import { useTodayData } from '@/hooks/useTodayData';
 import { useUpdateTask } from '@/hooks/useTasks';
+import { useDateLocale } from '@/lib/i18n/dateLocale';
 
 export default function TodayScreen() {
+  const { t } = useTranslation();
+  const dateLocale = useDateLocale();
   const { tasks, habits, habitLogs, isLoading, isError, error, refetch, isRefetching } = useTodayData();
   const updateTask = useUpdateTask();
   const toggleToday = useToggleHabitToday();
@@ -46,19 +50,19 @@ export default function TodayScreen() {
           refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={refetch} />}>
           <ThemedView style={styles.header}>
             <ThemedText type="title" style={styles.title}>
-              Today
+              {t('today.title')}
             </ThemedText>
             <ThemedText type="default" themeColor="textSecondary">
-              {format(new Date(), 'EEEE, MMM d')}
+              {format(new Date(), 'EEEE, MMM d', { locale: dateLocale })}
             </ThemedText>
           </ThemedView>
 
           <ThemedView style={styles.section}>
             <ThemedText type="subtitle" style={styles.sectionTitle}>
-              Tasks
+              {t('today.tasksSection')}
             </ThemedText>
             {tasks.length === 0 ? (
-              <EmptyState message="Nothing due today." />
+              <EmptyState message={t('today.noTasksToday')} />
             ) : (
               tasks.map((task) => (
                 <TaskRow
@@ -75,10 +79,10 @@ export default function TodayScreen() {
 
           <ThemedView style={styles.section}>
             <ThemedText type="subtitle" style={styles.sectionTitle}>
-              Habits
+              {t('today.habitsSection')}
             </ThemedText>
             {habits.length === 0 ? (
-              <EmptyState message="No habits yet." />
+              <EmptyState message={t('today.noHabits')} />
             ) : (
               habits.map((habit) => {
                 const doneToday = habitLogs.some(

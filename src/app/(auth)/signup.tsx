@@ -1,5 +1,6 @@
 import { Link } from 'expo-router';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { KeyboardAvoidingView, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -11,6 +12,7 @@ import { Spacing } from '@/constants/theme';
 import { supabase } from '@/lib/supabase';
 
 export default function SignupScreen() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -38,17 +40,15 @@ export default function SignupScreen() {
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
           <ThemedView style={styles.container}>
             <ThemedText type="title" style={styles.title}>
-              Create account
+              {t('auth.createAccount')}
             </ThemedText>
 
             {confirmationSent ? (
-              <ThemedText type="default">
-                Check your email to confirm your account, then log in.
-              </ThemedText>
+              <ThemedText type="default">{t('auth.checkEmail')}</ThemedText>
             ) : (
               <ThemedView style={styles.form}>
                 <TextField
-                  label="Email"
+                  label={t('auth.email')}
                   autoCapitalize="none"
                   keyboardType="email-address"
                   autoComplete="email"
@@ -56,7 +56,7 @@ export default function SignupScreen() {
                   onChangeText={setEmail}
                 />
                 <TextField
-                  label="Password"
+                  label={t('auth.password')}
                   secureTextEntry
                   autoCapitalize="none"
                   autoComplete="password-new"
@@ -64,12 +64,12 @@ export default function SignupScreen() {
                   onChangeText={setPassword}
                   error={error ?? undefined}
                 />
-                <Button title="Sign up" onPress={handleSignup} loading={loading} />
+                <Button title={t('auth.signUp')} onPress={handleSignup} loading={loading} />
               </ThemedView>
             )}
 
             <Link href="/(auth)/login" style={styles.link}>
-              <ThemedText type="linkPrimary">Already have an account? Log in</ThemedText>
+              <ThemedText type="linkPrimary">{t('auth.haveAccount')}</ThemedText>
             </Link>
           </ThemedView>
         </KeyboardAvoidingView>

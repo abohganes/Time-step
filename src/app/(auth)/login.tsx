@@ -1,5 +1,6 @@
 import { Link } from 'expo-router';
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { KeyboardAvoidingView, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -11,6 +12,7 @@ import { Spacing } from '@/constants/theme';
 import { supabase } from '@/lib/supabase';
 
 export default function LoginScreen() {
+  const { t } = useTranslation();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -32,12 +34,12 @@ export default function LoginScreen() {
           behavior={Platform.OS === 'ios' ? 'padding' : undefined}>
           <ThemedView style={styles.container}>
             <ThemedText type="title" style={styles.title}>
-              Welcome back
+              {t('auth.welcomeBack')}
             </ThemedText>
 
             <ThemedView style={styles.form}>
               <TextField
-                label="Email"
+                label={t('auth.email')}
                 autoCapitalize="none"
                 keyboardType="email-address"
                 autoComplete="email"
@@ -45,7 +47,7 @@ export default function LoginScreen() {
                 onChangeText={setEmail}
               />
               <TextField
-                label="Password"
+                label={t('auth.password')}
                 secureTextEntry
                 autoCapitalize="none"
                 autoComplete="password"
@@ -53,11 +55,11 @@ export default function LoginScreen() {
                 onChangeText={setPassword}
                 error={error ?? undefined}
               />
-              <Button title="Log in" onPress={handleLogin} loading={loading} />
+              <Button title={t('auth.logIn')} onPress={handleLogin} loading={loading} />
             </ThemedView>
 
             <Link href="/(auth)/signup" style={styles.link}>
-              <ThemedText type="linkPrimary">Don&apos;t have an account? Sign up</ThemedText>
+              <ThemedText type="linkPrimary">{t('auth.noAccount')}</ThemedText>
             </Link>
           </ThemedView>
         </KeyboardAvoidingView>
