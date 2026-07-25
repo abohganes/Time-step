@@ -65,6 +65,13 @@ export default function AppLayout() {
         }}
       />
       <Tabs.Screen
+        name="assistant"
+        options={{
+          title: t('tabs.assistant'),
+          tabBarIcon: ({ color, size }) => <Ionicons name="sparkles-outline" size={size} color={color} />,
+        }}
+      />
+      <Tabs.Screen
         name="settings"
         options={{
           title: t('tabs.settings'),

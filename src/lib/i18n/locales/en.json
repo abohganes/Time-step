@@ -71,6 +71,23 @@
     "tasks": "Tasks",
     "habits": "Habits",
     "notes": "Notes",
-    "settings": "Settings"
+    "settings": "Settings",
+    "assistant": "Assistant"
+  },
+  "assistant": {
+    "title": "Assistant",
+    "placeholder": "Ask me anything...",
+    "send": "Send",
+    "empty": "Ask me to plan your day, prioritize tasks, or just say hi.",
+    "clearChat": "Clear chat",
+    "sendError": "Couldn't reach the assistant. Try again.",
+    "quickActions": {
+      "planDay": "Plan my day",
+      "prioritize": "Help me prioritize my tasks",
+      "breakDown": "Break down my biggest task into smaller steps",
+      "motivate": "Motivate me",
+      "freeTime": "What free time do I have today?",
+      "analyzeHabits": "Analyze my habits"
+    }
   }
 }

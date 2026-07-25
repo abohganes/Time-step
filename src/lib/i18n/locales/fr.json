@@ -71,6 +71,23 @@
     "tasks": "Tâches",
     "habits": "Habitudes",
     "notes": "Notes",
-    "settings": "Réglages"
+    "settings": "Réglages",
+    "assistant": "Assistant"
+  },
+  "assistant": {
+    "title": "Assistant",
+    "placeholder": "Posez-moi une question...",
+    "send": "Envoyer",
+    "empty": "Demandez-moi de planifier votre journée, de prioriser vos tâches, ou dites simplement bonjour.",
+    "clearChat": "Effacer la conversation",
+    "sendError": "Impossible de joindre l'assistant. Réessayez.",
+    "quickActions": {
+      "planDay": "Planifie ma journée",
+      "prioritize": "Aide-moi à prioriser mes tâches",
+      "breakDown": "Décompose ma plus grande tâche en petites étapes",
+      "motivate": "Motive-moi",
+      "freeTime": "Quel temps libre ai-je aujourd'hui ?",
+      "analyzeHabits": "Analyse mes habitudes"
+    }
   }
 }
