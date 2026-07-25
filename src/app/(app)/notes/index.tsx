@@ -36,7 +36,7 @@ export default function NotesScreen() {
         {isLoading ? (
           <ActivityIndicator style={styles.loading} />
         ) : isError ? (
-          <ErrorState message={error.message} />
+          <ErrorState error={error} />
         ) : (
           <FlatList
             data={notes}

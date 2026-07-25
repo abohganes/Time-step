@@ -33,7 +33,7 @@ export default function TodayScreen() {
   if (isError) {
     return (
       <ThemedView style={styles.flex}>
-        <ErrorState message={error instanceof Error ? error.message : 'Failed to load'} />
+        <ErrorState error={error} />
       </ThemedView>
     );
   }

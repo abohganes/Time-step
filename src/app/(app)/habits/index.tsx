@@ -37,7 +37,7 @@ export default function HabitsScreen() {
         {isLoading ? (
           <ActivityIndicator style={styles.loading} />
         ) : isError ? (
-          <ErrorState message={error.message} />
+          <ErrorState error={error} />
         ) : (
           <FlatList
             data={habits}

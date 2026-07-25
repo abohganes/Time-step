@@ -4,11 +4,18 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
 
-export function ErrorState({ message }: { message: string }) {
+function getErrorMessage(error: unknown): string {
+  if (error && typeof error === 'object' && 'message' in error && typeof error.message === 'string') {
+    return error.message;
+  }
+  return 'Failed to load';
+}
+
+export function ErrorState({ error }: { error: unknown }) {
   return (
     <ThemedView style={styles.container}>
       <ThemedText type="default" style={styles.text}>
-        Something went wrong: {message}
+        Something went wrong: {getErrorMessage(error)}
       </ThemedText>
     </ThemedView>
   );

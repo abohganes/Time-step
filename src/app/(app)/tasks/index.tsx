@@ -33,7 +33,7 @@ export default function TasksScreen() {
         {isLoading ? (
           <ActivityIndicator style={styles.loading} />
         ) : isError ? (
-          <ErrorState message={error.message} />
+          <ErrorState error={error} />
         ) : (
           <FlatList
             data={tasks}
