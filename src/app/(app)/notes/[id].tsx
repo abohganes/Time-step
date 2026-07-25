@@ -43,7 +43,7 @@ export default function NoteEditorScreen() {
     navigation.setOptions({
       headerRight: () => (
         <Pressable onPress={handleDelete} hitSlop={8}>
-          <Ionicons name="trash-outline" size={22} color="#e5484d" />
+          <Ionicons name="trash-outline" size={22} color={theme.danger} />
         </Pressable>
       ),
     });

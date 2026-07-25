@@ -15,7 +15,7 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { Spacing } from '@/constants/theme';
+import { Radius, Spacing } from '@/constants/theme';
 import { useChatMessages, useClearChat, useSendChatMessage } from '@/hooks/useAssistant';
 import { useTheme } from '@/hooks/use-theme';
 import type { ChatMessage } from '@/lib/api/assistant';
@@ -96,7 +96,7 @@ export default function AssistantScreen() {
                   style={[
                     styles.bubble,
                     item.role === 'user'
-                      ? [styles.bubbleUser, { backgroundColor: '#3c87f7' }]
+                      ? [styles.bubbleUser, { backgroundColor: theme.accent }]
                       : [styles.bubbleAssistant, { backgroundColor: theme.backgroundElement }],
                   ]}>
                   <ThemedText
@@ -111,7 +111,7 @@ export default function AssistantScreen() {
 
           {sendMessage.isPending ? <ActivityIndicator style={styles.typingIndicator} /> : null}
           {sendMessage.isError ? (
-            <ThemedText type="small" style={styles.errorText}>
+            <ThemedText type="small" style={[styles.errorText, { color: theme.danger }]}>
               {t('assistant.sendError')}
             </ThemedText>
           ) : null}
@@ -131,7 +131,7 @@ export default function AssistantScreen() {
               disabled={!input.trim() || sendMessage.isPending}
               hitSlop={8}
               style={{ opacity: !input.trim() || sendMessage.isPending ? 0.4 : 1 }}>
-              <Ionicons name="send" size={24} color="#3c87f7" />
+              <Ionicons name="send" size={24} color={theme.accent} />
             </Pressable>
           </View>
         </KeyboardAvoidingView>
@@ -156,12 +156,12 @@ const styles = StyleSheet.create({
   chipsWrap: { flexDirection: 'row', flexWrap: 'wrap', gap: Spacing.two, justifyContent: 'center' },
   chip: { paddingVertical: Spacing.two, paddingHorizontal: Spacing.three, borderRadius: Spacing.five },
   list: { paddingHorizontal: Spacing.four, paddingVertical: Spacing.three, gap: Spacing.two },
-  bubble: { maxWidth: '85%', padding: Spacing.three, borderRadius: Spacing.three },
+  bubble: { maxWidth: '85%', padding: Spacing.three, borderRadius: Radius.large },
   bubbleUser: { alignSelf: 'flex-end' },
   bubbleAssistant: { alignSelf: 'flex-start' },
   bubbleUserText: { color: '#ffffff' },
   typingIndicator: { paddingVertical: Spacing.two },
-  errorText: { color: '#e5484d', textAlign: 'center', paddingBottom: Spacing.one },
+  errorText: { textAlign: 'center', paddingBottom: Spacing.one },
   inputRow: {
     flexDirection: 'row',
     alignItems: 'center',

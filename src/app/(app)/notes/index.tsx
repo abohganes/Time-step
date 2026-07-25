@@ -11,9 +11,11 @@ import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, Spacing } from '@/constants/theme';
 import { useCreateNote, useNotes } from '@/hooks/useNotes';
+import { useTheme } from '@/hooks/use-theme';
 
 export default function NotesScreen() {
   const { t } = useTranslation();
+  const theme = useTheme();
   const { data: notes, isLoading, isError, error, refetch, isRefetching } = useNotes();
   const createNote = useCreateNote();
   const router = useRouter();
@@ -31,7 +33,7 @@ export default function NotesScreen() {
             {t('notes.title')}
           </ThemedText>
           <Pressable hitSlop={8} onPress={handleCreate} disabled={createNote.isPending}>
-            <Ionicons name="add-circle" size={32} color="#3c87f7" />
+            <Ionicons name="add-circle" size={32} color={theme.accent} />
           </Pressable>
         </ThemedView>
 
@@ -46,7 +48,7 @@ export default function NotesScreen() {
             contentContainerStyle={[styles.list, notes?.length === 0 && styles.flex]}
             refreshing={isRefetching}
             onRefresh={refetch}
-            ListEmptyComponent={<EmptyState message={t('notes.empty')} />}
+            ListEmptyComponent={<EmptyState message={t('notes.empty')} icon="document-text-outline" />}
             renderItem={({ item }) => (
               <NoteRow note={item} onPress={() => router.push(`/(app)/notes/${item.id}`)} />
             )}
@@ -69,5 +71,5 @@ const styles = StyleSheet.create({
   },
   title: { fontSize: 32, lineHeight: 38 },
   loading: { flex: 1 },
-  list: { paddingHorizontal: Spacing.four, paddingBottom: BottomTabInset },
+  list: { paddingHorizontal: Spacing.four, paddingBottom: BottomTabInset, gap: Spacing.two },
 });

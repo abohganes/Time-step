@@ -12,9 +12,11 @@ import { ThemedView } from '@/components/themed-view';
 import { BottomTabInset, Spacing } from '@/constants/theme';
 import { computeStreak, todayKey, useHabitLogs, useToggleHabitToday } from '@/hooks/useHabitLogs';
 import { useHabits } from '@/hooks/useHabits';
+import { useTheme } from '@/hooks/use-theme';
 
 export default function HabitsScreen() {
   const { t } = useTranslation();
+  const theme = useTheme();
   const { data: habits, isLoading, isError, error, refetch, isRefetching } = useHabits();
   const { data: logs } = useHabitLogs();
   const toggleToday = useToggleHabitToday();
@@ -31,7 +33,7 @@ export default function HabitsScreen() {
           </ThemedText>
           <Link href="/(app)/habits/new" asChild>
             <Pressable hitSlop={8}>
-              <Ionicons name="add-circle" size={32} color="#3c87f7" />
+              <Ionicons name="add-circle" size={32} color={theme.accent} />
             </Pressable>
           </Link>
         </ThemedView>
@@ -47,7 +49,7 @@ export default function HabitsScreen() {
             contentContainerStyle={[styles.list, habits?.length === 0 && styles.flex]}
             refreshing={isRefetching}
             onRefresh={refetch}
-            ListEmptyComponent={<EmptyState message={t('habits.empty')} />}
+            ListEmptyComponent={<EmptyState message={t('habits.empty')} icon="flame-outline" />}
             renderItem={({ item }) => {
               const doneToday = (logs ?? []).some(
                 (log) => log.habit_id === item.id && log.completed_date === today
@@ -81,5 +83,5 @@ const styles = StyleSheet.create({
   },
   title: { fontSize: 32, lineHeight: 38 },
   loading: { flex: 1 },
-  list: { paddingHorizontal: Spacing.four, paddingBottom: BottomTabInset, gap: Spacing.one },
+  list: { paddingHorizontal: Spacing.four, paddingBottom: BottomTabInset, gap: Spacing.two },
 });

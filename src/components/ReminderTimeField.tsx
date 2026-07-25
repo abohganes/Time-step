@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { Pressable, StyleSheet, View } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
-import { Spacing } from '@/constants/theme';
+import { Radius, Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 
 type ReminderTimeFieldProps = {
@@ -43,7 +43,7 @@ export function ReminderTimeField({ label, value, onChange }: ReminderTimeFieldP
         </Pressable>
         {value ? (
           <Pressable onPress={() => onChange(null)} hitSlop={8}>
-            <ThemedText type="link" style={{ color: '#e5484d' }}>
+            <ThemedText type="link" style={{ color: theme.danger }}>
               {t('common.clear')}
             </ThemedText>
           </Pressable>
@@ -74,6 +74,6 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingVertical: Spacing.three,
     paddingHorizontal: Spacing.three,
-    borderRadius: Spacing.two,
+    borderRadius: Radius.medium,
   },
 });

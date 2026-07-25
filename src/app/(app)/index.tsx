@@ -62,7 +62,7 @@ export default function TodayScreen() {
               {t('today.tasksSection')}
             </ThemedText>
             {tasks.length === 0 ? (
-              <EmptyState message={t('today.noTasksToday')} />
+              <EmptyState message={t('today.noTasksToday')} icon="checkmark-circle-outline" />
             ) : (
               tasks.map((task) => (
                 <TaskRow
@@ -82,7 +82,7 @@ export default function TodayScreen() {
               {t('today.habitsSection')}
             </ThemedText>
             {habits.length === 0 ? (
-              <EmptyState message={t('today.noHabits')} />
+              <EmptyState message={t('today.noHabits')} icon="flame-outline" />
             ) : (
               habits.map((habit) => {
                 const doneToday = habitLogs.some(

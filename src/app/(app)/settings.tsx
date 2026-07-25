@@ -7,7 +7,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Button } from '@/components/ui/Button';
-import { BottomTabInset, Spacing } from '@/constants/theme';
+import { BottomTabInset, CardShadow, Radius, Spacing } from '@/constants/theme';
+import { useTheme } from '@/hooks/use-theme';
 import { useAuth } from '@/lib/auth/AuthProvider';
 import { changeLanguage, SUPPORTED_LANGUAGES, type SupportedLanguage } from '@/lib/i18n';
 import { supabase } from '@/lib/supabase';
@@ -20,6 +21,7 @@ const LANGUAGE_LABELS: Record<SupportedLanguage, string> = {
 
 export default function SettingsScreen() {
   const { t, i18n } = useTranslation();
+  const theme = useTheme();
   const { session } = useAuth();
   const [notifStatus, setNotifStatus] = useState<Notifications.PermissionStatus | null>(null);
   const [changingLanguage, setChangingLanguage] = useState(false);
@@ -87,10 +89,14 @@ export default function SettingsScreen() {
                     key={language}
                     onPress={() => handleLanguageSelect(language)}
                     disabled={changingLanguage}
-                    style={[styles.languagePill, selected && styles.languagePillSelected]}>
-                    <ThemedText
-                      type="small"
-                      style={selected ? styles.languagePillTextSelected : undefined}>
+                    style={[
+                      styles.languagePill,
+                      {
+                        borderColor: theme.accent,
+                        backgroundColor: selected ? theme.accent : 'transparent',
+                      },
+                    ]}>
+                    <ThemedText type="small" style={selected ? { color: '#ffffff' } : undefined}>
                       {LANGUAGE_LABELS[language]}
                     </ThemedText>
                   </Pressable>
@@ -116,15 +122,12 @@ const styles = StyleSheet.create({
     gap: Spacing.four,
   },
   title: { fontSize: 32, lineHeight: 38 },
-  card: { padding: Spacing.three, borderRadius: Spacing.three, gap: Spacing.two },
+  card: { padding: Spacing.four, borderRadius: Radius.large, gap: Spacing.two, ...CardShadow },
   languageRow: { flexDirection: 'row', gap: Spacing.two },
   languagePill: {
     paddingVertical: Spacing.two,
     paddingHorizontal: Spacing.three,
-    borderRadius: Spacing.five,
+    borderRadius: Radius.pill,
     borderWidth: 1,
-    borderColor: '#3c87f7',
   },
-  languagePillSelected: { backgroundColor: '#3c87f7' },
-  languagePillTextSelected: { color: '#ffffff' },
 });

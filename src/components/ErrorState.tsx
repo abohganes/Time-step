@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Spacing } from '@/constants/theme';
+import { useTheme } from '@/hooks/use-theme';
 
 function extractMessage(error: unknown, fallback: string): string {
   if (error && typeof error === 'object' && 'message' in error && typeof error.message === 'string') {
@@ -14,10 +15,11 @@ function extractMessage(error: unknown, fallback: string): string {
 
 export function ErrorState({ error }: { error: unknown }) {
   const { t } = useTranslation();
+  const theme = useTheme();
 
   return (
     <ThemedView style={styles.container}>
-      <ThemedText type="default" style={styles.text}>
+      <ThemedText type="default" style={[styles.text, { color: theme.danger }]}>
         {t('errors.somethingWrong', { message: extractMessage(error, t('errors.failedToLoad')) })}
       </ThemedText>
     </ThemedView>
@@ -32,5 +34,5 @@ const styles = StyleSheet.create({
     paddingHorizontal: Spacing.five,
     paddingVertical: Spacing.six,
   },
-  text: { textAlign: 'center', color: '#e5484d' },
+  text: { textAlign: 'center' },
 });

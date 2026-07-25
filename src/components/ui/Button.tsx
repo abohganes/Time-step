@@ -1,7 +1,7 @@
 import { ActivityIndicator, Pressable, StyleSheet, type PressableProps } from 'react-native';
 
 import { ThemedText } from '@/components/themed-text';
-import { Spacing } from '@/constants/theme';
+import { Radius, Spacing } from '@/constants/theme';
 import { useTheme } from '@/hooks/use-theme';
 
 type ButtonProps = Omit<PressableProps, 'style'> & {
@@ -14,19 +14,21 @@ export function Button({ title, variant = 'primary', loading, disabled, ...rest 
   const theme = useTheme();
 
   const backgroundColor =
-    variant === 'primary'
-      ? '#3c87f7'
-      : variant === 'danger'
-        ? '#e5484d'
-        : theme.backgroundElement;
+    variant === 'primary' ? theme.accent : variant === 'danger' ? theme.danger : theme.backgroundElement;
   const textColor = variant === 'secondary' ? theme.text : '#ffffff';
+  const isDisabled = disabled || loading;
 
   return (
     <Pressable
-      disabled={disabled || loading}
+      disabled={isDisabled}
       style={({ pressed }) => [
         styles.base,
-        { backgroundColor, opacity: pressed || disabled || loading ? 0.7 : 1 },
+        variant !== 'secondary' && styles.shadow,
+        {
+          backgroundColor,
+          opacity: isDisabled ? 0.5 : pressed ? 0.85 : 1,
+          transform: [{ scale: pressed ? 0.98 : 1 }],
+        },
       ]}
       {...rest}>
       {loading ? (
@@ -44,8 +46,15 @@ const styles = StyleSheet.create({
   base: {
     paddingVertical: Spacing.three,
     paddingHorizontal: Spacing.four,
-    borderRadius: Spacing.two,
+    borderRadius: Radius.medium,
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  shadow: {
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.12,
+    shadowRadius: 6,
+    elevation: 2,
   },
 });

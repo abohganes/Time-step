@@ -1,5 +1,6 @@
 import { Ionicons } from '@expo/vector-icons';
 import { Pressable, StyleSheet } from 'react-native';
+import Animated, { ZoomIn } from 'react-native-reanimated';
 
 import { useTheme } from '@/hooks/use-theme';
 
@@ -21,12 +22,16 @@ export function Checkbox({ checked, onToggle, size = 24 }: CheckboxProps) {
         {
           width: size,
           height: size,
-          borderRadius: size / 4,
-          borderColor: checked ? '#3c87f7' : theme.textSecondary,
-          backgroundColor: checked ? '#3c87f7' : 'transparent',
+          borderRadius: size / 3,
+          borderColor: checked ? theme.accent : theme.border,
+          backgroundColor: checked ? theme.accent : 'transparent',
         },
       ]}>
-      {checked ? <Ionicons name="checkmark" size={size * 0.7} color="#ffffff" /> : null}
+      {checked ? (
+        <Animated.View entering={ZoomIn.duration(150)}>
+          <Ionicons name="checkmark" size={size * 0.7} color="#ffffff" />
+        </Animated.View>
+      ) : null}
     </Pressable>
   );
 }

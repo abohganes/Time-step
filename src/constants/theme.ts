@@ -9,18 +9,26 @@ import { Platform } from 'react-native';
 
 export const Colors = {
   light: {
-    text: '#000000',
-    background: '#ffffff',
-    backgroundElement: '#F0F0F3',
-    backgroundSelected: '#E0E1E6',
-    textSecondary: '#60646C',
+    text: '#15171A',
+    background: '#FFFFFF',
+    backgroundElement: '#F6F6F8',
+    backgroundSelected: '#ECEDF1',
+    textSecondary: '#6B7280',
+    border: '#E5E6EB',
+    accent: '#3B82F6',
+    danger: '#EF4444',
+    streak: '#F59E0B',
   },
   dark: {
-    text: '#ffffff',
-    background: '#000000',
-    backgroundElement: '#212225',
-    backgroundSelected: '#2E3135',
-    textSecondary: '#B0B4BA',
+    text: '#F3F4F6',
+    background: '#0B0B0D',
+    backgroundElement: '#1A1B1E',
+    backgroundSelected: '#242529',
+    textSecondary: '#9CA3AF',
+    border: '#2A2B2F',
+    accent: '#5B8DFF',
+    danger: '#F87171',
+    streak: '#FBBF24',
   },
 } as const;
 
@@ -63,3 +71,21 @@ export const Spacing = {
 
 export const BottomTabInset = Platform.select({ ios: 50, android: 80 }) ?? 0;
 export const MaxContentWidth = 800;
+
+export const Radius = {
+  small: 8,
+  medium: 12,
+  large: 16,
+  pill: 999,
+} as const;
+
+export const CardShadow = Platform.select({
+  ios: {
+    shadowColor: '#000000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.06,
+    shadowRadius: 4,
+  },
+  android: { elevation: 1 },
+  default: {},
+}) as object;

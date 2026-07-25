@@ -11,9 +11,11 @@ import { ThemedView } from '@/components/themed-view';
 import { TaskRow } from '@/components/TaskRow';
 import { BottomTabInset, Spacing } from '@/constants/theme';
 import { useTasks, useUpdateTask } from '@/hooks/useTasks';
+import { useTheme } from '@/hooks/use-theme';
 
 export default function TasksScreen() {
   const { t } = useTranslation();
+  const theme = useTheme();
   const { data: tasks, isLoading, isError, error, refetch, isRefetching } = useTasks();
   const updateTask = useUpdateTask();
   const router = useRouter();
@@ -27,7 +29,7 @@ export default function TasksScreen() {
           </ThemedText>
           <Link href="/(app)/tasks/new" asChild>
             <Pressable hitSlop={8}>
-              <Ionicons name="add-circle" size={32} color="#3c87f7" />
+              <Ionicons name="add-circle" size={32} color={theme.accent} />
             </Pressable>
           </Link>
         </ThemedView>
@@ -43,7 +45,7 @@ export default function TasksScreen() {
             contentContainerStyle={[styles.list, tasks?.length === 0 && styles.flex]}
             refreshing={isRefetching}
             onRefresh={refetch}
-            ListEmptyComponent={<EmptyState message={t('tasks.empty')} />}
+            ListEmptyComponent={<EmptyState message={t('tasks.empty')} icon="checkbox-outline" />}
             renderItem={({ item }) => (
               <TaskRow
                 task={item}
@@ -72,5 +74,5 @@ const styles = StyleSheet.create({
   },
   title: { fontSize: 32, lineHeight: 38 },
   loading: { flex: 1 },
-  list: { paddingHorizontal: Spacing.four, paddingBottom: BottomTabInset, gap: Spacing.one },
+  list: { paddingHorizontal: Spacing.four, paddingBottom: BottomTabInset, gap: Spacing.two },
 });
