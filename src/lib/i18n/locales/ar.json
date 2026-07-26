@@ -16,12 +16,14 @@
     "signUp": "إنشاء حساب",
     "haveAccount": "لديك حساب بالفعل؟ سجّل الدخول"
   },
-  "today": {
-    "title": "اليوم",
+  "dashboard": {
+    "title": "لوحة التحكم",
     "tasksSection": "المهام",
     "noTasksToday": "لا يوجد شيء مستحق اليوم.",
     "habitsSection": "العادات",
-    "noHabits": "لا توجد عادات بعد."
+    "noHabits": "لا توجد عادات بعد.",
+    "completedTasks": "مكتملة",
+    "pendingTasks": "قيد الانتظار"
   },
   "tasks": {
     "title": "المهام",
@@ -56,7 +58,11 @@
     "notRequested": "لم يُطلب بعد",
     "enableNotifications": "تفعيل الإشعارات",
     "signOut": "تسجيل الخروج",
-    "language": "اللغة"
+    "language": "اللغة",
+    "appearance": "المظهر",
+    "themeLight": "فاتح",
+    "themeDark": "داكن",
+    "themeSystem": "النظام"
   },
   "errors": {
     "somethingWrong": "حدث خطأ ما: {{message}}",
@@ -67,7 +73,7 @@
     "habitReminderTitle": "تذكير بعادة"
   },
   "tabs": {
-    "today": "اليوم",
+    "today": "لوحة التحكم",
     "tasks": "المهام",
     "habits": "العادات",
     "notes": "الملاحظات",

@@ -16,12 +16,14 @@
     "signUp": "S'inscrire",
     "haveAccount": "Déjà un compte ? Connectez-vous"
   },
-  "today": {
-    "title": "Aujourd'hui",
+  "dashboard": {
+    "title": "Tableau de bord",
     "tasksSection": "Tâches",
     "noTasksToday": "Rien à faire aujourd'hui.",
     "habitsSection": "Habitudes",
-    "noHabits": "Aucune habitude pour le moment."
+    "noHabits": "Aucune habitude pour le moment.",
+    "completedTasks": "Terminées",
+    "pendingTasks": "En attente"
   },
   "tasks": {
     "title": "Tâches",
@@ -56,7 +58,11 @@
     "notRequested": "Non demandées",
     "enableNotifications": "Activer les notifications",
     "signOut": "Se déconnecter",
-    "language": "Langue"
+    "language": "Langue",
+    "appearance": "Apparence",
+    "themeLight": "Clair",
+    "themeDark": "Sombre",
+    "themeSystem": "Système"
   },
   "errors": {
     "somethingWrong": "Une erreur s'est produite : {{message}}",
@@ -67,7 +73,7 @@
     "habitReminderTitle": "Rappel d'habitude"
   },
   "tabs": {
-    "today": "Aujourd'hui",
+    "today": "Tableau de bord",
     "tasks": "Tâches",
     "habits": "Habitudes",
     "notes": "Notes",

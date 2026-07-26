@@ -1,3 +1,4 @@
+import { Ionicons } from '@expo/vector-icons';
 import { format } from 'date-fns';
 import { useRouter } from 'expo-router';
 import { useTranslation } from 'react-i18next';
@@ -10,16 +11,29 @@ import { HabitRow } from '@/components/HabitRow';
 import { TaskRow } from '@/components/TaskRow';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { BottomTabInset, Spacing } from '@/constants/theme';
+import { BottomTabInset, CardShadow, Radius, Spacing } from '@/constants/theme';
 import { computeStreak, todayKey, useToggleHabitToday } from '@/hooks/useHabitLogs';
 import { useTodayData } from '@/hooks/useTodayData';
 import { useUpdateTask } from '@/hooks/useTasks';
+import { useTheme } from '@/hooks/use-theme';
 import { useDateLocale } from '@/lib/i18n/dateLocale';
 
-export default function TodayScreen() {
+export default function DashboardScreen() {
   const { t } = useTranslation();
+  const theme = useTheme();
   const dateLocale = useDateLocale();
-  const { tasks, habits, habitLogs, isLoading, isError, error, refetch, isRefetching } = useTodayData();
+  const {
+    tasks,
+    habits,
+    habitLogs,
+    completedCount,
+    pendingCount,
+    isLoading,
+    isError,
+    error,
+    refetch,
+    isRefetching,
+  } = useTodayData();
   const updateTask = useUpdateTask();
   const toggleToday = useToggleHabitToday();
   const router = useRouter();
@@ -50,19 +64,44 @@ export default function TodayScreen() {
           refreshControl={<RefreshControl refreshing={isRefetching} onRefresh={refetch} />}>
           <ThemedView style={styles.header}>
             <ThemedText type="title" style={styles.title}>
-              {t('today.title')}
+              {t('dashboard.title')}
             </ThemedText>
             <ThemedText type="default" themeColor="textSecondary">
               {format(new Date(), 'EEEE, MMM d', { locale: dateLocale })}
             </ThemedText>
           </ThemedView>
 
+          <ThemedView style={styles.statsRow}>
+            <ThemedView
+              type="backgroundElement"
+              style={[styles.statCard, CardShadow]}>
+              <Ionicons name="checkmark-done-circle" size={26} color={theme.accent} />
+              <ThemedText type="title" style={styles.statNumber}>
+                {completedCount}
+              </ThemedText>
+              <ThemedText type="small" themeColor="textSecondary">
+                {t('dashboard.completedTasks')}
+              </ThemedText>
+            </ThemedView>
+            <ThemedView
+              type="backgroundElement"
+              style={[styles.statCard, CardShadow]}>
+              <Ionicons name="time-outline" size={26} color={theme.streak} />
+              <ThemedText type="title" style={styles.statNumber}>
+                {pendingCount}
+              </ThemedText>
+              <ThemedText type="small" themeColor="textSecondary">
+                {t('dashboard.pendingTasks')}
+              </ThemedText>
+            </ThemedView>
+          </ThemedView>
+
           <ThemedView style={styles.section}>
             <ThemedText type="subtitle" style={styles.sectionTitle}>
-              {t('today.tasksSection')}
+              {t('dashboard.tasksSection')}
             </ThemedText>
             {tasks.length === 0 ? (
-              <EmptyState message={t('today.noTasksToday')} icon="checkmark-circle-outline" />
+              <EmptyState message={t('dashboard.noTasksToday')} icon="checkmark-circle-outline" />
             ) : (
               tasks.map((task) => (
                 <TaskRow
@@ -79,10 +118,10 @@ export default function TodayScreen() {
 
           <ThemedView style={styles.section}>
             <ThemedText type="subtitle" style={styles.sectionTitle}>
-              {t('today.habitsSection')}
+              {t('dashboard.habitsSection')}
             </ThemedText>
             {habits.length === 0 ? (
-              <EmptyState message={t('today.noHabits')} icon="flame-outline" />
+              <EmptyState message={t('dashboard.noHabits')} icon="flame-outline" />
             ) : (
               habits.map((habit) => {
                 const doneToday = habitLogs.some(
@@ -112,6 +151,15 @@ const styles = StyleSheet.create({
   content: { paddingHorizontal: Spacing.four, paddingBottom: BottomTabInset, gap: Spacing.five },
   header: { paddingTop: Spacing.three, gap: Spacing.one },
   title: { fontSize: 32, lineHeight: 38 },
+  statsRow: { flexDirection: 'row', gap: Spacing.three },
+  statCard: {
+    flex: 1,
+    padding: Spacing.four,
+    borderRadius: Radius.large,
+    alignItems: 'flex-start',
+    gap: Spacing.one,
+  },
+  statNumber: { fontSize: 28, lineHeight: 32 },
   section: { gap: Spacing.two },
   sectionTitle: { fontSize: 20, lineHeight: 26 },
 });

@@ -16,11 +16,16 @@ export function useTodayData() {
   );
 
   const activeHabits = (habitsQuery.data ?? []).filter((habit) => habit.is_active);
+  const allTasks = tasksQuery.data ?? [];
+  const completedCount = allTasks.filter((task) => task.is_completed).length;
+  const pendingCount = allTasks.length - completedCount;
 
   return {
     tasks: todayTasks,
     habits: activeHabits,
     habitLogs: habitLogsQuery.data ?? [],
+    completedCount,
+    pendingCount,
     isLoading: tasksQuery.isLoading || habitsQuery.isLoading || habitLogsQuery.isLoading,
     isError: tasksQuery.isError || habitsQuery.isError || habitLogsQuery.isError,
     error: tasksQuery.error ?? habitsQuery.error ?? habitLogsQuery.error,

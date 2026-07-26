@@ -1,7 +1,7 @@
 import * as Notifications from 'expo-notifications';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { Pressable, StyleSheet } from 'react-native';
+import { Pressable, ScrollView, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { ThemedText } from '@/components/themed-text';
@@ -12,6 +12,7 @@ import { useTheme } from '@/hooks/use-theme';
 import { useAuth } from '@/lib/auth/AuthProvider';
 import { changeLanguage, SUPPORTED_LANGUAGES, type SupportedLanguage } from '@/lib/i18n';
 import { supabase } from '@/lib/supabase';
+import { useThemePreference, type ThemePreference } from '@/lib/theme';
 
 const LANGUAGE_LABELS: Record<SupportedLanguage, string> = {
   en: 'English',
@@ -19,10 +20,13 @@ const LANGUAGE_LABELS: Record<SupportedLanguage, string> = {
   ar: 'العربية',
 };
 
+const THEME_OPTIONS: ThemePreference[] = ['light', 'dark', 'system'];
+
 export default function SettingsScreen() {
   const { t, i18n } = useTranslation();
   const theme = useTheme();
   const { session } = useAuth();
+  const { preference, setPreference } = useThemePreference();
   const [notifStatus, setNotifStatus] = useState<Notifications.PermissionStatus | null>(null);
   const [changingLanguage, setChangingLanguage] = useState(false);
 
@@ -45,7 +49,7 @@ export default function SettingsScreen() {
   return (
     <ThemedView style={styles.flex}>
       <SafeAreaView style={styles.flex}>
-        <ThemedView style={styles.container}>
+        <ScrollView contentContainerStyle={styles.container}>
           <ThemedText type="title" style={styles.title}>
             {t('settings.title')}
           </ThemedText>
@@ -105,8 +109,35 @@ export default function SettingsScreen() {
             </ThemedView>
           </ThemedView>
 
+          <ThemedView type="backgroundElement" style={styles.card}>
+            <ThemedText type="small" themeColor="textSecondary">
+              {t('settings.appearance')}
+            </ThemedText>
+            <ThemedView style={styles.languageRow}>
+              {THEME_OPTIONS.map((option) => {
+                const selected = option === preference;
+                return (
+                  <Pressable
+                    key={option}
+                    onPress={() => setPreference(option)}
+                    style={[
+                      styles.languagePill,
+                      {
+                        borderColor: theme.accent,
+                        backgroundColor: selected ? theme.accent : 'transparent',
+                      },
+                    ]}>
+                    <ThemedText type="small" style={selected ? { color: '#ffffff' } : undefined}>
+                      {t(`settings.theme${option.charAt(0).toUpperCase()}${option.slice(1)}`)}
+                    </ThemedText>
+                  </Pressable>
+                );
+              })}
+            </ThemedView>
+          </ThemedView>
+
           <Button title={t('settings.signOut')} variant="danger" onPress={() => supabase.auth.signOut()} />
-        </ThemedView>
+        </ScrollView>
       </SafeAreaView>
     </ThemedView>
   );

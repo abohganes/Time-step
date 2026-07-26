@@ -3,18 +3,26 @@ import { QueryClientProvider } from '@tanstack/react-query';
 import { Slot } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
-import { useColorScheme } from 'react-native';
 
 import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import { AuthProvider } from '@/lib/auth/AuthProvider';
 import { initI18n } from '@/lib/i18n';
 import { ensureAndroidChannel } from '@/lib/notifications';
 import { queryClient } from '@/lib/queryClient';
+import { ThemePreferenceProvider, useThemePreference } from '@/lib/theme';
 
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
+  return (
+    <ThemePreferenceProvider>
+      <RootLayoutInner />
+    </ThemePreferenceProvider>
+  );
+}
+
+function RootLayoutInner() {
+  const { effectiveScheme } = useThemePreference();
   const [i18nReady, setI18nReady] = useState(false);
 
   useEffect(() => {
@@ -23,7 +31,7 @@ export default function RootLayout() {
   }, []);
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+    <ThemeProvider value={effectiveScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
           <AnimatedSplashOverlay />
