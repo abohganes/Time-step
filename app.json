@@ -11,6 +11,9 @@
       "icon": "./assets/expo.icon",
       "bundleIdentifier": "com.notiontasksapp.app"
     },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
     "android": {
       "package": "com.notiontasksapp.app",
       "adaptiveIcon": {
@@ -40,7 +43,7 @@
       [
         "expo-notifications",
         {
-          "color": "#3c87f7"
+          "color": "#FF6F91"
         }
       ],
       "expo-localization"
