@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "notion-tasks-app",
+    "name": "Life Management",
     "slug": "notion-tasks-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -48,6 +48,13 @@
     "experiments": {
       "typedRoutes": true,
       "reactCompiler": true
-    }
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "1c828957-f39a-4586-8496-bb4e5465fe0c"
+      }
+    },
+    "owner": "ibohganes"
   }
 }
