@@ -60,12 +60,12 @@ export function AnimatedSplashOverlay() {
 
 const styles = StyleSheet.create({
   image: {
-    width: 160,
-    height: 160,
+    width: 280,
+    height: 280,
   },
   splashOverlay: {
     ...StyleSheet.absoluteFillObject,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#104097',
     alignItems: 'center',
     justifyContent: 'center',
     zIndex: 1000,
