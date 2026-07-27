@@ -7,12 +7,15 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Button } from '@/components/ui/Button';
+import { GoogleSignInButton } from '@/components/ui/GoogleSignInButton';
 import { TextField } from '@/components/ui/TextField';
 import { Spacing } from '@/constants/theme';
+import { useTheme } from '@/hooks/use-theme';
 import { supabase } from '@/lib/supabase';
 
 export default function LoginScreen() {
   const { t } = useTranslation();
+  const theme = useTheme();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
@@ -58,6 +61,16 @@ export default function LoginScreen() {
               <Button title={t('auth.logIn')} onPress={handleLogin} loading={loading} />
             </ThemedView>
 
+            <ThemedView style={styles.dividerRow}>
+              <ThemedView style={[styles.dividerLine, { backgroundColor: theme.border }]} />
+              <ThemedText type="small" themeColor="textSecondary">
+                {t('auth.or')}
+              </ThemedText>
+              <ThemedView style={[styles.dividerLine, { backgroundColor: theme.border }]} />
+            </ThemedView>
+
+            <GoogleSignInButton onError={setError} />
+
             <Link href="/(auth)/signup" style={styles.link}>
               <ThemedText type="linkPrimary">{t('auth.noAccount')}</ThemedText>
             </Link>
@@ -78,5 +91,7 @@ const styles = StyleSheet.create({
   },
   title: { fontSize: 32, lineHeight: 38 },
   form: { gap: Spacing.three },
+  dividerRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.three },
+  dividerLine: { flex: 1, height: StyleSheet.hairlineWidth },
   link: { alignSelf: 'center' },
 });

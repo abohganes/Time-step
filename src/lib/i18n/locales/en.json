@@ -14,7 +14,9 @@
     "createAccount": "Create account",
     "checkEmail": "Check your email to confirm your account, then log in.",
     "signUp": "Sign up",
-    "haveAccount": "Already have an account? Log in"
+    "haveAccount": "Already have an account? Log in",
+    "continueWithGoogle": "Continue with Google",
+    "or": "or"
   },
   "dashboard": {
     "title": "Dashboard",

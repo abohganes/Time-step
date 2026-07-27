@@ -14,7 +14,9 @@
     "createAccount": "إنشاء حساب",
     "checkEmail": "تحقق من بريدك الإلكتروني لتأكيد حسابك، ثم سجّل الدخول.",
     "signUp": "إنشاء حساب",
-    "haveAccount": "لديك حساب بالفعل؟ سجّل الدخول"
+    "haveAccount": "لديك حساب بالفعل؟ سجّل الدخول",
+    "continueWithGoogle": "المتابعة عبر Google",
+    "or": "أو"
   },
   "dashboard": {
     "title": "لوحة التحكم",

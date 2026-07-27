@@ -14,7 +14,9 @@
     "createAccount": "Créer un compte",
     "checkEmail": "Vérifiez votre e-mail pour confirmer votre compte, puis connectez-vous.",
     "signUp": "S'inscrire",
-    "haveAccount": "Déjà un compte ? Connectez-vous"
+    "haveAccount": "Déjà un compte ? Connectez-vous",
+    "continueWithGoogle": "Continuer avec Google",
+    "or": "ou"
   },
   "dashboard": {
     "title": "Tableau de bord",
