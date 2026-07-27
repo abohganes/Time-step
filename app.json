@@ -17,7 +17,7 @@
     "android": {
       "package": "com.notiontasksapp.app",
       "adaptiveIcon": {
-        "backgroundColor": "#104097",
+        "backgroundColor": "#0061FA",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
@@ -43,7 +43,7 @@
       [
         "expo-notifications",
         {
-          "color": "#104097"
+          "color": "#0061FA"
         }
       ],
       "expo-localization",
