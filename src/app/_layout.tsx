@@ -4,7 +4,6 @@ import { Slot } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect, useState } from 'react';
 
-import { AnimatedSplashOverlay } from '@/components/animated-icon';
 import { AuthProvider } from '@/lib/auth/AuthProvider';
 import { initI18n } from '@/lib/i18n';
 import { ensureAndroidChannel } from '@/lib/notifications';
@@ -27,16 +26,16 @@ function RootLayoutInner() {
 
   useEffect(() => {
     ensureAndroidChannel();
-    initI18n().then(() => setI18nReady(true));
+    initI18n().then(() => {
+      setI18nReady(true);
+      SplashScreen.hideAsync();
+    });
   }, []);
 
   return (
     <ThemeProvider value={effectiveScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <QueryClientProvider client={queryClient}>
-        <AuthProvider>
-          <AnimatedSplashOverlay />
-          {i18nReady ? <Slot /> : null}
-        </AuthProvider>
+        <AuthProvider>{i18nReady ? <Slot /> : null}</AuthProvider>
       </QueryClientProvider>
     </ThemeProvider>
   );
