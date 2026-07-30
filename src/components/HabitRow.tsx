@@ -1,6 +1,7 @@
 import { Pressable, StyleSheet, View } from 'react-native';
 import Animated, { FadeIn } from 'react-native-reanimated';
 
+import { CategoryDot } from '@/components/CategoryPicker';
 import { StreakBadge } from '@/components/StreakBadge';
 import { ThemedText } from '@/components/themed-text';
 import { Checkbox } from '@/components/ui/Checkbox';
@@ -30,9 +31,12 @@ export function HabitRow({ habit, doneToday, streak, onToggle, onPress }: HabitR
         ]}>
         <Checkbox checked={doneToday} onToggle={onToggle} />
         <View style={styles.textContainer}>
-          <ThemedText type="default" numberOfLines={1}>
-            {habit.title}
-          </ThemedText>
+          <View style={styles.titleRow}>
+            <CategoryDot category={habit.category} />
+            <ThemedText type="default" numberOfLines={1}>
+              {habit.title}
+            </ThemedText>
+          </View>
         </View>
         <StreakBadge streak={streak} />
       </Pressable>
@@ -50,4 +54,5 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   textContainer: { flex: 1 },
+  titleRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.two },
 });

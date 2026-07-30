@@ -5,10 +5,32 @@ import { initReactI18next } from 'react-i18next';
 import { DevSettings, I18nManager } from 'react-native';
 
 import ar from './locales/ar.json';
+import de from './locales/de.json';
 import en from './locales/en.json';
+import es from './locales/es.json';
 import fr from './locales/fr.json';
+import it from './locales/it.json';
+import ja from './locales/ja.json';
+import nl from './locales/nl.json';
+import pl from './locales/pl.json';
+import pt from './locales/pt.json';
+import ru from './locales/ru.json';
+import zh from './locales/zh.json';
 
-export const SUPPORTED_LANGUAGES = ['en', 'fr', 'ar'] as const;
+export const SUPPORTED_LANGUAGES = [
+  'en',
+  'fr',
+  'de',
+  'es',
+  'it',
+  'pt',
+  'nl',
+  'pl',
+  'ru',
+  'zh',
+  'ja',
+  'ar',
+] as const;
 export type SupportedLanguage = (typeof SUPPORTED_LANGUAGES)[number];
 const RTL_LANGUAGES: SupportedLanguage[] = ['ar'];
 
@@ -33,6 +55,15 @@ export async function initI18n() {
     resources: {
       en: { translation: en },
       fr: { translation: fr },
+      de: { translation: de },
+      es: { translation: es },
+      it: { translation: it },
+      pt: { translation: pt },
+      nl: { translation: nl },
+      pl: { translation: pl },
+      ru: { translation: ru },
+      zh: { translation: zh },
+      ja: { translation: ja },
       ar: { translation: ar },
     },
     lng: language,

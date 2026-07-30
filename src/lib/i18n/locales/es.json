@@ -1,0 +1,158 @@
+{
+  "common": {
+    "save": "Guardar",
+    "clear": "Borrar",
+    "titleLabel": "Título",
+    "descriptionLabel": "Descripción",
+    "category": "Categoría"
+  },
+  "categories": {
+    "general": "General",
+    "work": "Trabajo",
+    "student": "Estudios",
+    "fitness": "Fitness"
+  },
+  "auth": {
+    "welcomeBack": "Bienvenido de nuevo",
+    "email": "Correo electrónico",
+    "password": "Contraseña",
+    "logIn": "Iniciar sesión",
+    "noAccount": "¿No tienes cuenta? Regístrate",
+    "createAccount": "Crear cuenta",
+    "checkEmail": "Revisa tu correo para confirmar tu cuenta y luego inicia sesión.",
+    "signUp": "Registrarse",
+    "haveAccount": "¿Ya tienes cuenta? Inicia sesión",
+    "continueWithGoogle": "Continuar con Google",
+    "or": "o"
+  },
+  "dashboard": {
+    "title": "Panel",
+    "tasksSection": "Tareas",
+    "noTasksToday": "Nada pendiente hoy.",
+    "habitsSection": "Hábitos",
+    "noHabits": "Aún no hay hábitos.",
+    "completedTasks": "Completadas",
+    "pendingTasks": "Pendientes",
+    "habitsToday": "Hábitos completados hoy",
+    "focusTimeToday": "Tiempo de concentración",
+    "focusMinutes": "{{count}} min",
+    "quickActionsTitle": "Acciones rápidas",
+    "quickActions": {
+      "assistant": "Asistente IA",
+      "addTask": "Añadir tarea",
+      "startPomodoro": "Iniciar Pomodoro",
+      "viewCalendar": "Ver calendario"
+    }
+  },
+  "tasks": {
+    "title": "Tareas",
+    "empty": "Aún no hay tareas. Toca + para añadir una.",
+    "newTitle": "Nueva tarea",
+    "editTitle": "Editar tarea",
+    "dueDate": "Fecha de vencimiento",
+    "noDueDate": "Sin fecha de vencimiento",
+    "deleteTask": "Eliminar tarea"
+  },
+  "habits": {
+    "title": "Hábitos",
+    "empty": "Aún no hay hábitos. Toca + para añadir uno.",
+    "newTitle": "Nuevo hábito",
+    "editTitle": "Editar hábito",
+    "dailyReminder": "Recordatorio diario",
+    "noReminder": "Sin recordatorio",
+    "deleteHabit": "Eliminar hábito"
+  },
+  "notes": {
+    "title": "Notas",
+    "empty": "Aún no hay notas. Toca + para añadir una.",
+    "untitled": "Sin título",
+    "startWriting": "Empieza a escribir..."
+  },
+  "settings": {
+    "title": "Ajustes",
+    "signedInAs": "Sesión iniciada como",
+    "notifications": "Notificaciones",
+    "enabled": "Activadas",
+    "denied": "Denegadas",
+    "notRequested": "No solicitadas",
+    "enableNotifications": "Activar notificaciones",
+    "signOut": "Cerrar sesión",
+    "language": "Idioma",
+    "appearance": "Apariencia",
+    "themeLight": "Claro",
+    "themeDark": "Oscuro",
+    "themeSystem": "Sistema",
+    "color": "Color",
+    "background": "Fondo",
+    "backgroundNone": "Ninguno",
+    "backgroundClouds": "Nubes",
+    "backgroundRain": "Lluvia",
+    "backgroundTrees": "Árboles"
+  },
+  "errors": {
+    "somethingWrong": "Algo salió mal: {{message}}",
+    "failedToLoad": "Error al cargar"
+  },
+  "notif": {
+    "taskDueTitle": "Tarea vencida",
+    "habitReminderTitle": "Recordatorio de hábito"
+  },
+  "tabs": {
+    "today": "Panel",
+    "tasks": "Tareas",
+    "habits": "Hábitos",
+    "notes": "Notas",
+    "settings": "Ajustes",
+    "assistant": "Asistente",
+    "pomodoro": "Pomodoro",
+    "more": "Más",
+    "planner": "Planificador",
+    "calendar": "Calendario",
+    "reminders": "Recordatorios",
+    "statistics": "Estadísticas"
+  },
+  "pomodoro": {
+    "title": "Pomodoro",
+    "workMode": "Tiempo de concentración",
+    "breakMode": "Tiempo de descanso",
+    "sessionsToday": "{{count}} sesiones completadas hoy",
+    "presetLabel": "{{work}}/{{break}} min"
+  },
+  "planner": {
+    "title": "Planificador",
+    "today": "Hoy"
+  },
+  "calendar": {
+    "title": "Calendario"
+  },
+  "reminders": {
+    "title": "Recordatorios",
+    "tasksSection": "Próximas tareas",
+    "habitsSection": "Recordatorios diarios de hábitos",
+    "noUpcomingTasks": "No hay tareas próximas con fecha de vencimiento.",
+    "noHabitReminders": "No hay recordatorios de hábitos configurados.",
+    "dailyAt": "Diariamente a las {{time}}"
+  },
+  "statistics": {
+    "title": "Estadísticas",
+    "tasksCompleted": "Tareas completadas (últimos 7 días)",
+    "pomodoroSessions": "Sesiones de Pomodoro (últimos 7 días)",
+    "habitStreaks": "Rachas de hábitos"
+  },
+  "assistant": {
+    "title": "Asistente",
+    "placeholder": "Pregúntame lo que sea...",
+    "send": "Enviar",
+    "empty": "Pídeme que planifique tu día, priorice tus tareas, o simplemente saluda.",
+    "clearChat": "Borrar chat",
+    "sendError": "No se pudo contactar al asistente. Inténtalo de nuevo.",
+    "quickActions": {
+      "planDay": "Planificar mi día",
+      "prioritize": "Ayúdame a priorizar mis tareas",
+      "breakDown": "Divide mi tarea más grande en pasos más pequeños",
+      "motivate": "Motívame",
+      "freeTime": "¿Cuánto tiempo libre tengo hoy?",
+      "analyzeHabits": "Analiza mis hábitos"
+    }
+  }
+}

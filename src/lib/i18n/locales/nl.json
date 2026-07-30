@@ -1,0 +1,158 @@
+{
+  "common": {
+    "save": "Opslaan",
+    "clear": "Wissen",
+    "titleLabel": "Titel",
+    "descriptionLabel": "Beschrijving",
+    "category": "Categorie"
+  },
+  "categories": {
+    "general": "Algemeen",
+    "work": "Werk",
+    "student": "Studie",
+    "fitness": "Fitness"
+  },
+  "auth": {
+    "welcomeBack": "Welkom terug",
+    "email": "E-mail",
+    "password": "Wachtwoord",
+    "logIn": "Inloggen",
+    "noAccount": "Nog geen account? Registreren",
+    "createAccount": "Account aanmaken",
+    "checkEmail": "Controleer je e-mail om je account te bevestigen en log dan in.",
+    "signUp": "Registreren",
+    "haveAccount": "Al een account? Inloggen",
+    "continueWithGoogle": "Doorgaan met Google",
+    "or": "of"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "tasksSection": "Taken",
+    "noTasksToday": "Niets te doen vandaag.",
+    "habitsSection": "Gewoontes",
+    "noHabits": "Nog geen gewoontes.",
+    "completedTasks": "Voltooid",
+    "pendingTasks": "In behandeling",
+    "habitsToday": "Vandaag voltooide gewoontes",
+    "focusTimeToday": "Focustijd vandaag",
+    "focusMinutes": "{{count}} min",
+    "quickActionsTitle": "Snelle acties",
+    "quickActions": {
+      "assistant": "AI-assistent",
+      "addTask": "Taak toevoegen",
+      "startPomodoro": "Pomodoro starten",
+      "viewCalendar": "Kalender bekijken"
+    }
+  },
+  "tasks": {
+    "title": "Taken",
+    "empty": "Nog geen taken. Tik op + om er een toe te voegen.",
+    "newTitle": "Nieuwe taak",
+    "editTitle": "Taak bewerken",
+    "dueDate": "Vervaldatum",
+    "noDueDate": "Geen vervaldatum",
+    "deleteTask": "Taak verwijderen"
+  },
+  "habits": {
+    "title": "Gewoontes",
+    "empty": "Nog geen gewoontes. Tik op + om er een toe te voegen.",
+    "newTitle": "Nieuwe gewoonte",
+    "editTitle": "Gewoonte bewerken",
+    "dailyReminder": "Dagelijkse herinnering",
+    "noReminder": "Geen herinnering",
+    "deleteHabit": "Gewoonte verwijderen"
+  },
+  "notes": {
+    "title": "Notities",
+    "empty": "Nog geen notities. Tik op + om er een toe te voegen.",
+    "untitled": "Zonder titel",
+    "startWriting": "Begin met schrijven..."
+  },
+  "settings": {
+    "title": "Instellingen",
+    "signedInAs": "Ingelogd als",
+    "notifications": "Meldingen",
+    "enabled": "Ingeschakeld",
+    "denied": "Geweigerd",
+    "notRequested": "Niet aangevraagd",
+    "enableNotifications": "Meldingen inschakelen",
+    "signOut": "Uitloggen",
+    "language": "Taal",
+    "appearance": "Weergave",
+    "themeLight": "Licht",
+    "themeDark": "Donker",
+    "themeSystem": "Systeem",
+    "color": "Kleur",
+    "background": "Achtergrond",
+    "backgroundNone": "Geen",
+    "backgroundClouds": "Wolken",
+    "backgroundRain": "Regen",
+    "backgroundTrees": "Bomen"
+  },
+  "errors": {
+    "somethingWrong": "Er is iets misgegaan: {{message}}",
+    "failedToLoad": "Laden mislukt"
+  },
+  "notif": {
+    "taskDueTitle": "Taak verloopt",
+    "habitReminderTitle": "Gewoonteherinnering"
+  },
+  "tabs": {
+    "today": "Dashboard",
+    "tasks": "Taken",
+    "habits": "Gewoontes",
+    "notes": "Notities",
+    "settings": "Instellingen",
+    "assistant": "Assistent",
+    "pomodoro": "Pomodoro",
+    "more": "Meer",
+    "planner": "Planner",
+    "calendar": "Kalender",
+    "reminders": "Herinneringen",
+    "statistics": "Statistieken"
+  },
+  "pomodoro": {
+    "title": "Pomodoro",
+    "workMode": "Focustijd",
+    "breakMode": "Pauzetijd",
+    "sessionsToday": "{{count}} sessies vandaag voltooid",
+    "presetLabel": "{{work}}/{{break}} min"
+  },
+  "planner": {
+    "title": "Planner",
+    "today": "Vandaag"
+  },
+  "calendar": {
+    "title": "Kalender"
+  },
+  "reminders": {
+    "title": "Herinneringen",
+    "tasksSection": "Aankomende taken",
+    "habitsSection": "Dagelijkse gewoonteherinneringen",
+    "noUpcomingTasks": "Geen aankomende taken met vervaldatum.",
+    "noHabitReminders": "Geen gewoonteherinneringen ingesteld.",
+    "dailyAt": "Dagelijks om {{time}}"
+  },
+  "statistics": {
+    "title": "Statistieken",
+    "tasksCompleted": "Voltooide taken (laatste 7 dagen)",
+    "pomodoroSessions": "Pomodoro-sessies (laatste 7 dagen)",
+    "habitStreaks": "Gewoontereeksen"
+  },
+  "assistant": {
+    "title": "Assistent",
+    "placeholder": "Vraag me iets...",
+    "send": "Versturen",
+    "empty": "Vraag me om je dag te plannen, taken te prioriteren, of zeg gewoon hallo.",
+    "clearChat": "Chat wissen",
+    "sendError": "Kan de assistent niet bereiken. Probeer opnieuw.",
+    "quickActions": {
+      "planDay": "Plan mijn dag",
+      "prioritize": "Help me mijn taken te prioriteren",
+      "breakDown": "Splits mijn grootste taak op in kleinere stappen",
+      "motivate": "Motiveer me",
+      "freeTime": "Hoeveel vrije tijd heb ik vandaag?",
+      "analyzeHabits": "Analyseer mijn gewoontes"
+    }
+  }
+}

@@ -3,10 +3,10 @@
  * https://docs.expo.dev/guides/color-schemes/
  */
 
-import { Colors } from '@/constants/theme';
+import { AccentPalettes, Colors } from '@/constants/theme';
 import { useThemePreference } from '@/lib/theme';
 
 export function useTheme() {
-  const { effectiveScheme } = useThemePreference();
-  return Colors[effectiveScheme];
+  const { effectiveScheme, accentKey } = useThemePreference();
+  return { ...Colors[effectiveScheme], accent: AccentPalettes[accentKey][effectiveScheme] };
 }

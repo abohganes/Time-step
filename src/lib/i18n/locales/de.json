@@ -1,0 +1,158 @@
+{
+  "common": {
+    "save": "Speichern",
+    "clear": "Löschen",
+    "titleLabel": "Titel",
+    "descriptionLabel": "Beschreibung",
+    "category": "Kategorie"
+  },
+  "categories": {
+    "general": "Allgemein",
+    "work": "Arbeit",
+    "student": "Studium",
+    "fitness": "Fitness"
+  },
+  "auth": {
+    "welcomeBack": "Willkommen zurück",
+    "email": "E-Mail",
+    "password": "Passwort",
+    "logIn": "Anmelden",
+    "noAccount": "Noch kein Konto? Registrieren",
+    "createAccount": "Konto erstellen",
+    "checkEmail": "Bestätige dein Konto per E-Mail und melde dich dann an.",
+    "signUp": "Registrieren",
+    "haveAccount": "Bereits ein Konto? Anmelden",
+    "continueWithGoogle": "Mit Google fortfahren",
+    "or": "oder"
+  },
+  "dashboard": {
+    "title": "Übersicht",
+    "tasksSection": "Aufgaben",
+    "noTasksToday": "Heute nichts fällig.",
+    "habitsSection": "Gewohnheiten",
+    "noHabits": "Noch keine Gewohnheiten.",
+    "completedTasks": "Erledigt",
+    "pendingTasks": "Offen",
+    "habitsToday": "Heute erledigte Gewohnheiten",
+    "focusTimeToday": "Fokuszeit heute",
+    "focusMinutes": "{{count}} Min",
+    "quickActionsTitle": "Schnellaktionen",
+    "quickActions": {
+      "assistant": "KI-Assistent",
+      "addTask": "Aufgabe hinzufügen",
+      "startPomodoro": "Pomodoro starten",
+      "viewCalendar": "Kalender anzeigen"
+    }
+  },
+  "tasks": {
+    "title": "Aufgaben",
+    "empty": "Noch keine Aufgaben. Tippe auf +, um eine hinzuzufügen.",
+    "newTitle": "Neue Aufgabe",
+    "editTitle": "Aufgabe bearbeiten",
+    "dueDate": "Fälligkeitsdatum",
+    "noDueDate": "Kein Fälligkeitsdatum",
+    "deleteTask": "Aufgabe löschen"
+  },
+  "habits": {
+    "title": "Gewohnheiten",
+    "empty": "Noch keine Gewohnheiten. Tippe auf +, um eine hinzuzufügen.",
+    "newTitle": "Neue Gewohnheit",
+    "editTitle": "Gewohnheit bearbeiten",
+    "dailyReminder": "Tägliche Erinnerung",
+    "noReminder": "Keine Erinnerung",
+    "deleteHabit": "Gewohnheit löschen"
+  },
+  "notes": {
+    "title": "Notizen",
+    "empty": "Noch keine Notizen. Tippe auf +, um eine hinzuzufügen.",
+    "untitled": "Ohne Titel",
+    "startWriting": "Fang an zu schreiben..."
+  },
+  "settings": {
+    "title": "Einstellungen",
+    "signedInAs": "Angemeldet als",
+    "notifications": "Benachrichtigungen",
+    "enabled": "Aktiviert",
+    "denied": "Verweigert",
+    "notRequested": "Nicht angefragt",
+    "enableNotifications": "Benachrichtigungen aktivieren",
+    "signOut": "Abmelden",
+    "language": "Sprache",
+    "appearance": "Erscheinungsbild",
+    "themeLight": "Hell",
+    "themeDark": "Dunkel",
+    "themeSystem": "System",
+    "color": "Farbe",
+    "background": "Hintergrund",
+    "backgroundNone": "Keiner",
+    "backgroundClouds": "Wolken",
+    "backgroundRain": "Regen",
+    "backgroundTrees": "Bäume"
+  },
+  "errors": {
+    "somethingWrong": "Etwas ist schiefgelaufen: {{message}}",
+    "failedToLoad": "Laden fehlgeschlagen"
+  },
+  "notif": {
+    "taskDueTitle": "Aufgabe fällig",
+    "habitReminderTitle": "Gewohnheitserinnerung"
+  },
+  "tabs": {
+    "today": "Übersicht",
+    "tasks": "Aufgaben",
+    "habits": "Gewohnheiten",
+    "notes": "Notizen",
+    "settings": "Einstellungen",
+    "assistant": "Assistent",
+    "pomodoro": "Pomodoro",
+    "more": "Mehr",
+    "planner": "Planer",
+    "calendar": "Kalender",
+    "reminders": "Erinnerungen",
+    "statistics": "Statistik"
+  },
+  "pomodoro": {
+    "title": "Pomodoro",
+    "workMode": "Fokuszeit",
+    "breakMode": "Pause",
+    "sessionsToday": "{{count}} Sitzungen heute abgeschlossen",
+    "presetLabel": "{{work}}/{{break}} Min"
+  },
+  "planner": {
+    "title": "Planer",
+    "today": "Heute"
+  },
+  "calendar": {
+    "title": "Kalender"
+  },
+  "reminders": {
+    "title": "Erinnerungen",
+    "tasksSection": "Anstehende Aufgaben",
+    "habitsSection": "Tägliche Gewohnheitserinnerungen",
+    "noUpcomingTasks": "Keine anstehenden Aufgaben mit Fälligkeitsdatum.",
+    "noHabitReminders": "Keine Gewohnheitserinnerungen eingerichtet.",
+    "dailyAt": "Täglich um {{time}}"
+  },
+  "statistics": {
+    "title": "Statistik",
+    "tasksCompleted": "Erledigte Aufgaben (letzte 7 Tage)",
+    "pomodoroSessions": "Pomodoro-Sitzungen (letzte 7 Tage)",
+    "habitStreaks": "Gewohnheits-Serien"
+  },
+  "assistant": {
+    "title": "Assistent",
+    "placeholder": "Frag mich etwas...",
+    "send": "Senden",
+    "empty": "Bitte mich, deinen Tag zu planen, Aufgaben zu priorisieren, oder sag einfach hallo.",
+    "clearChat": "Chat löschen",
+    "sendError": "Assistent nicht erreichbar. Versuch es erneut.",
+    "quickActions": {
+      "planDay": "Meinen Tag planen",
+      "prioritize": "Hilf mir, meine Aufgaben zu priorisieren",
+      "breakDown": "Zerlege meine größte Aufgabe in kleinere Schritte",
+      "motivate": "Motiviere mich",
+      "freeTime": "Wie viel Freizeit habe ich heute?",
+      "analyzeHabits": "Analysiere meine Gewohnheiten"
+    }
+  }
+}

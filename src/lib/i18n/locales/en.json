@@ -3,7 +3,14 @@
     "save": "Save",
     "clear": "Clear",
     "titleLabel": "Title",
-    "descriptionLabel": "Description"
+    "descriptionLabel": "Description",
+    "category": "Category"
+  },
+  "categories": {
+    "general": "General",
+    "work": "Work",
+    "student": "Student",
+    "fitness": "Fitness"
   },
   "auth": {
     "welcomeBack": "Welcome back",
@@ -25,7 +32,17 @@
     "habitsSection": "Habits",
     "noHabits": "No habits yet.",
     "completedTasks": "Completed",
-    "pendingTasks": "Pending"
+    "pendingTasks": "Pending",
+    "habitsToday": "Habits done today",
+    "focusTimeToday": "Focus time today",
+    "focusMinutes": "{{count}} min",
+    "quickActionsTitle": "Quick actions",
+    "quickActions": {
+      "assistant": "AI Assistant",
+      "addTask": "Add task",
+      "startPomodoro": "Start Pomodoro",
+      "viewCalendar": "View calendar"
+    }
   },
   "tasks": {
     "title": "Tasks",
@@ -64,7 +81,13 @@
     "appearance": "Appearance",
     "themeLight": "Light",
     "themeDark": "Dark",
-    "themeSystem": "System"
+    "themeSystem": "System",
+    "color": "Color",
+    "background": "Background",
+    "backgroundNone": "None",
+    "backgroundClouds": "Clouds",
+    "backgroundRain": "Rain",
+    "backgroundTrees": "Trees"
   },
   "errors": {
     "somethingWrong": "Something went wrong: {{message}}",
@@ -80,7 +103,41 @@
     "habits": "Habits",
     "notes": "Notes",
     "settings": "Settings",
-    "assistant": "Assistant"
+    "assistant": "Assistant",
+    "pomodoro": "Pomodoro",
+    "more": "More",
+    "planner": "Planner",
+    "calendar": "Calendar",
+    "reminders": "Reminders",
+    "statistics": "Statistics"
+  },
+  "pomodoro": {
+    "title": "Pomodoro",
+    "workMode": "Focus time",
+    "breakMode": "Break time",
+    "sessionsToday": "{{count}} sessions completed today",
+    "presetLabel": "{{work}}/{{break}} min"
+  },
+  "planner": {
+    "title": "Planner",
+    "today": "Today"
+  },
+  "calendar": {
+    "title": "Calendar"
+  },
+  "reminders": {
+    "title": "Reminders",
+    "tasksSection": "Upcoming tasks",
+    "habitsSection": "Daily habit reminders",
+    "noUpcomingTasks": "No upcoming tasks with a due date.",
+    "noHabitReminders": "No habit reminders set.",
+    "dailyAt": "Daily at {{time}}"
+  },
+  "statistics": {
+    "title": "Statistics",
+    "tasksCompleted": "Tasks completed (last 7 days)",
+    "pomodoroSessions": "Pomodoro sessions (last 7 days)",
+    "habitStreaks": "Habit streaks"
   },
   "assistant": {
     "title": "Assistant",

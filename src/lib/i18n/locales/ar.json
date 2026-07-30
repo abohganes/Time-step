@@ -3,7 +3,14 @@
     "save": "حفظ",
     "clear": "مسح",
     "titleLabel": "العنوان",
-    "descriptionLabel": "الوصف"
+    "descriptionLabel": "الوصف",
+    "category": "التصنيف"
+  },
+  "categories": {
+    "general": "عام",
+    "work": "عمل",
+    "student": "دراسة",
+    "fitness": "رياضة"
   },
   "auth": {
     "welcomeBack": "مرحباً بعودتك",
@@ -25,7 +32,17 @@
     "habitsSection": "العادات",
     "noHabits": "لا توجد عادات بعد.",
     "completedTasks": "مكتملة",
-    "pendingTasks": "قيد الانتظار"
+    "pendingTasks": "قيد الانتظار",
+    "habitsToday": "عادات منجزة اليوم",
+    "focusTimeToday": "وقت التركيز اليوم",
+    "focusMinutes": "{{count}} د",
+    "quickActionsTitle": "إجراءات سريعة",
+    "quickActions": {
+      "assistant": "المساعد الذكي",
+      "addTask": "إضافة مهمة",
+      "startPomodoro": "بدء بومودورو",
+      "viewCalendar": "عرض التقويم"
+    }
   },
   "tasks": {
     "title": "المهام",
@@ -64,7 +81,13 @@
     "appearance": "المظهر",
     "themeLight": "فاتح",
     "themeDark": "داكن",
-    "themeSystem": "النظام"
+    "themeSystem": "النظام",
+    "color": "اللون",
+    "background": "الخلفية",
+    "backgroundNone": "بدون",
+    "backgroundClouds": "غيوم",
+    "backgroundRain": "مطر",
+    "backgroundTrees": "أشجار"
   },
   "errors": {
     "somethingWrong": "حدث خطأ ما: {{message}}",
@@ -80,7 +103,41 @@
     "habits": "العادات",
     "notes": "الملاحظات",
     "settings": "الإعدادات",
-    "assistant": "المساعد"
+    "assistant": "المساعد",
+    "pomodoro": "بومودورو",
+    "more": "المزيد",
+    "planner": "المخطط",
+    "calendar": "التقويم",
+    "reminders": "التذكيرات",
+    "statistics": "الإحصائيات"
+  },
+  "pomodoro": {
+    "title": "بومودورو",
+    "workMode": "وقت التركيز",
+    "breakMode": "وقت الراحة",
+    "sessionsToday": "تم إكمال {{count}} جلسات اليوم",
+    "presetLabel": "{{work}}/{{break}} د"
+  },
+  "planner": {
+    "title": "المخطط",
+    "today": "اليوم"
+  },
+  "calendar": {
+    "title": "التقويم"
+  },
+  "reminders": {
+    "title": "التذكيرات",
+    "tasksSection": "المهام القادمة",
+    "habitsSection": "تذكيرات العادات اليومية",
+    "noUpcomingTasks": "لا توجد مهام قادمة لها موعد استحقاق.",
+    "noHabitReminders": "لا توجد تذكيرات عادات محددة.",
+    "dailyAt": "يومياً في {{time}}"
+  },
+  "statistics": {
+    "title": "الإحصائيات",
+    "tasksCompleted": "المهام المكتملة (آخر 7 أيام)",
+    "pomodoroSessions": "جلسات بومودورو (آخر 7 أيام)",
+    "habitStreaks": "سلاسل العادات"
   },
   "assistant": {
     "title": "المساعد",

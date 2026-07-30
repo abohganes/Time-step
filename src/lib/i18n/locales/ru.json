@@ -1,0 +1,158 @@
+{
+  "common": {
+    "save": "Сохранить",
+    "clear": "Очистить",
+    "titleLabel": "Название",
+    "descriptionLabel": "Описание",
+    "category": "Категория"
+  },
+  "categories": {
+    "general": "Общее",
+    "work": "Работа",
+    "student": "Учёба",
+    "fitness": "Фитнес"
+  },
+  "auth": {
+    "welcomeBack": "С возвращением",
+    "email": "Эл. почта",
+    "password": "Пароль",
+    "logIn": "Войти",
+    "noAccount": "Нет аккаунта? Зарегистрироваться",
+    "createAccount": "Создать аккаунт",
+    "checkEmail": "Проверьте почту, чтобы подтвердить аккаунт, затем войдите.",
+    "signUp": "Зарегистрироваться",
+    "haveAccount": "Уже есть аккаунт? Войти",
+    "continueWithGoogle": "Продолжить с Google",
+    "or": "или"
+  },
+  "dashboard": {
+    "title": "Главная",
+    "tasksSection": "Задачи",
+    "noTasksToday": "На сегодня ничего нет.",
+    "habitsSection": "Привычки",
+    "noHabits": "Пока нет привычек.",
+    "completedTasks": "Выполнено",
+    "pendingTasks": "В ожидании",
+    "habitsToday": "Привычек выполнено сегодня",
+    "focusTimeToday": "Время фокуса сегодня",
+    "focusMinutes": "{{count}} мин",
+    "quickActionsTitle": "Быстрые действия",
+    "quickActions": {
+      "assistant": "ИИ-ассистент",
+      "addTask": "Добавить задачу",
+      "startPomodoro": "Запустить Помодоро",
+      "viewCalendar": "Открыть календарь"
+    }
+  },
+  "tasks": {
+    "title": "Задачи",
+    "empty": "Пока нет задач. Нажмите +, чтобы добавить.",
+    "newTitle": "Новая задача",
+    "editTitle": "Редактировать задачу",
+    "dueDate": "Срок выполнения",
+    "noDueDate": "Без срока",
+    "deleteTask": "Удалить задачу"
+  },
+  "habits": {
+    "title": "Привычки",
+    "empty": "Пока нет привычек. Нажмите +, чтобы добавить.",
+    "newTitle": "Новая привычка",
+    "editTitle": "Редактировать привычку",
+    "dailyReminder": "Ежедневное напоминание",
+    "noReminder": "Без напоминания",
+    "deleteHabit": "Удалить привычку"
+  },
+  "notes": {
+    "title": "Заметки",
+    "empty": "Пока нет заметок. Нажмите +, чтобы добавить.",
+    "untitled": "Без названия",
+    "startWriting": "Начните писать..."
+  },
+  "settings": {
+    "title": "Настройки",
+    "signedInAs": "Вы вошли как",
+    "notifications": "Уведомления",
+    "enabled": "Включены",
+    "denied": "Отклонены",
+    "notRequested": "Не запрошены",
+    "enableNotifications": "Включить уведомления",
+    "signOut": "Выйти",
+    "language": "Язык",
+    "appearance": "Внешний вид",
+    "themeLight": "Светлая",
+    "themeDark": "Тёмная",
+    "themeSystem": "Системная",
+    "color": "Цвет",
+    "background": "Фон",
+    "backgroundNone": "Нет",
+    "backgroundClouds": "Облака",
+    "backgroundRain": "Дождь",
+    "backgroundTrees": "Деревья"
+  },
+  "errors": {
+    "somethingWrong": "Что-то пошло не так: {{message}}",
+    "failedToLoad": "Не удалось загрузить"
+  },
+  "notif": {
+    "taskDueTitle": "Срок задачи",
+    "habitReminderTitle": "Напоминание о привычке"
+  },
+  "tabs": {
+    "today": "Главная",
+    "tasks": "Задачи",
+    "habits": "Привычки",
+    "notes": "Заметки",
+    "settings": "Настройки",
+    "assistant": "Ассистент",
+    "pomodoro": "Помодоро",
+    "more": "Ещё",
+    "planner": "Планировщик",
+    "calendar": "Календарь",
+    "reminders": "Напоминания",
+    "statistics": "Статистика"
+  },
+  "pomodoro": {
+    "title": "Помодоро",
+    "workMode": "Время фокуса",
+    "breakMode": "Время отдыха",
+    "sessionsToday": "Сегодня завершено сессий: {{count}}",
+    "presetLabel": "{{work}}/{{break}} мин"
+  },
+  "planner": {
+    "title": "Планировщик",
+    "today": "Сегодня"
+  },
+  "calendar": {
+    "title": "Календарь"
+  },
+  "reminders": {
+    "title": "Напоминания",
+    "tasksSection": "Предстоящие задачи",
+    "habitsSection": "Ежедневные напоминания о привычках",
+    "noUpcomingTasks": "Нет предстоящих задач со сроком.",
+    "noHabitReminders": "Напоминания о привычках не настроены.",
+    "dailyAt": "Ежедневно в {{time}}"
+  },
+  "statistics": {
+    "title": "Статистика",
+    "tasksCompleted": "Выполненные задачи (последние 7 дней)",
+    "pomodoroSessions": "Сессии Помодоро (последние 7 дней)",
+    "habitStreaks": "Серии привычек"
+  },
+  "assistant": {
+    "title": "Ассистент",
+    "placeholder": "Спросите меня о чём угодно...",
+    "send": "Отправить",
+    "empty": "Попросите меня спланировать день, расставить приоритеты задач или просто поздоровайтесь.",
+    "clearChat": "Очистить чат",
+    "sendError": "Не удалось связаться с ассистентом. Попробуйте снова.",
+    "quickActions": {
+      "planDay": "Спланировать мой день",
+      "prioritize": "Помоги расставить приоритеты задач",
+      "breakDown": "Разбей мою самую большую задачу на маленькие шаги",
+      "motivate": "Мотивируй меня",
+      "freeTime": "Сколько у меня свободного времени сегодня?",
+      "analyzeHabits": "Проанализируй мои привычки"
+    }
+  }
+}

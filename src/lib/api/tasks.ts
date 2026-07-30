@@ -1,3 +1,4 @@
+import type { Category } from '@/constants/categories';
 import { supabase } from '@/lib/supabase';
 import type { Task } from '@/types/database';
 
@@ -15,6 +16,7 @@ export type CreateTaskInput = {
   title: string;
   description?: string | null;
   due_date?: string | null;
+  category?: Category;
 };
 
 export async function createTask(input: CreateTaskInput): Promise<Task> {

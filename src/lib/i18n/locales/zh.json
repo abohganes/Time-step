@@ -1,0 +1,158 @@
+{
+  "common": {
+    "save": "保存",
+    "clear": "清除",
+    "titleLabel": "标题",
+    "descriptionLabel": "描述",
+    "category": "分类"
+  },
+  "categories": {
+    "general": "常规",
+    "work": "工作",
+    "student": "学习",
+    "fitness": "健身"
+  },
+  "auth": {
+    "welcomeBack": "欢迎回来",
+    "email": "电子邮箱",
+    "password": "密码",
+    "logIn": "登录",
+    "noAccount": "还没有账号？注册",
+    "createAccount": "创建账号",
+    "checkEmail": "请查收邮件以确认账号，然后登录。",
+    "signUp": "注册",
+    "haveAccount": "已有账号？登录",
+    "continueWithGoogle": "使用 Google 继续",
+    "or": "或"
+  },
+  "dashboard": {
+    "title": "仪表盘",
+    "tasksSection": "任务",
+    "noTasksToday": "今天没有待办事项。",
+    "habitsSection": "习惯",
+    "noHabits": "还没有习惯。",
+    "completedTasks": "已完成",
+    "pendingTasks": "待处理",
+    "habitsToday": "今日已完成习惯",
+    "focusTimeToday": "今日专注时间",
+    "focusMinutes": "{{count}} 分钟",
+    "quickActionsTitle": "快捷操作",
+    "quickActions": {
+      "assistant": "AI 助手",
+      "addTask": "添加任务",
+      "startPomodoro": "开始番茄钟",
+      "viewCalendar": "查看日历"
+    }
+  },
+  "tasks": {
+    "title": "任务",
+    "empty": "还没有任务，点击 + 添加一个。",
+    "newTitle": "新任务",
+    "editTitle": "编辑任务",
+    "dueDate": "截止日期",
+    "noDueDate": "无截止日期",
+    "deleteTask": "删除任务"
+  },
+  "habits": {
+    "title": "习惯",
+    "empty": "还没有习惯，点击 + 添加一个。",
+    "newTitle": "新习惯",
+    "editTitle": "编辑习惯",
+    "dailyReminder": "每日提醒",
+    "noReminder": "无提醒",
+    "deleteHabit": "删除习惯"
+  },
+  "notes": {
+    "title": "笔记",
+    "empty": "还没有笔记，点击 + 添加一个。",
+    "untitled": "无标题",
+    "startWriting": "开始写作..."
+  },
+  "settings": {
+    "title": "设置",
+    "signedInAs": "当前登录账号",
+    "notifications": "通知",
+    "enabled": "已启用",
+    "denied": "已拒绝",
+    "notRequested": "未请求",
+    "enableNotifications": "启用通知",
+    "signOut": "退出登录",
+    "language": "语言",
+    "appearance": "外观",
+    "themeLight": "浅色",
+    "themeDark": "深色",
+    "themeSystem": "跟随系统",
+    "color": "颜色",
+    "background": "背景",
+    "backgroundNone": "无",
+    "backgroundClouds": "云朵",
+    "backgroundRain": "雨",
+    "backgroundTrees": "树木"
+  },
+  "errors": {
+    "somethingWrong": "出错了：{{message}}",
+    "failedToLoad": "加载失败"
+  },
+  "notif": {
+    "taskDueTitle": "任务到期",
+    "habitReminderTitle": "习惯提醒"
+  },
+  "tabs": {
+    "today": "仪表盘",
+    "tasks": "任务",
+    "habits": "习惯",
+    "notes": "笔记",
+    "settings": "设置",
+    "assistant": "助手",
+    "pomodoro": "番茄钟",
+    "more": "更多",
+    "planner": "计划",
+    "calendar": "日历",
+    "reminders": "提醒",
+    "statistics": "统计"
+  },
+  "pomodoro": {
+    "title": "番茄钟",
+    "workMode": "专注时间",
+    "breakMode": "休息时间",
+    "sessionsToday": "今日已完成 {{count}} 个番茄钟",
+    "presetLabel": "{{work}}/{{break}} 分钟"
+  },
+  "planner": {
+    "title": "计划",
+    "today": "今天"
+  },
+  "calendar": {
+    "title": "日历"
+  },
+  "reminders": {
+    "title": "提醒",
+    "tasksSection": "即将到期的任务",
+    "habitsSection": "每日习惯提醒",
+    "noUpcomingTasks": "没有设置截止日期的待办任务。",
+    "noHabitReminders": "没有设置习惯提醒。",
+    "dailyAt": "每天 {{time}}"
+  },
+  "statistics": {
+    "title": "统计",
+    "tasksCompleted": "已完成任务（最近7天）",
+    "pomodoroSessions": "番茄钟次数（最近7天）",
+    "habitStreaks": "习惯连续天数"
+  },
+  "assistant": {
+    "title": "助手",
+    "placeholder": "问我任何问题...",
+    "send": "发送",
+    "empty": "让我帮你规划一天、排列任务优先级，或者只是打个招呼。",
+    "clearChat": "清空对话",
+    "sendError": "无法连接助手，请重试。",
+    "quickActions": {
+      "planDay": "规划我的一天",
+      "prioritize": "帮我排列任务优先级",
+      "breakDown": "把我最大的任务拆分成小步骤",
+      "motivate": "激励我",
+      "freeTime": "我今天有多少空闲时间？",
+      "analyzeHabits": "分析我的习惯"
+    }
+  }
+}

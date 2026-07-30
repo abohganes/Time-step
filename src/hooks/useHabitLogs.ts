@@ -7,23 +7,41 @@ import type { HabitLog } from '@/types/database';
 const HABIT_LOGS_KEY = ['habit_logs'];
 
 export const todayKey = () => format(new Date(), 'yyyy-MM-dd');
+export const dateKey = (date: Date) => format(date, 'yyyy-MM-dd');
 
 export function useHabitLogs() {
   return useQuery({ queryKey: HABIT_LOGS_KEY, queryFn: listHabitLogs });
 }
 
-export function useToggleHabitToday() {
+export function useToggleHabitOnDate() {
   const queryClient = useQueryClient();
   return useMutation({
-    mutationFn: async ({ habitId, isDoneToday }: { habitId: string; isDoneToday: boolean }) => {
-      if (isDoneToday) {
-        await unlogHabitCompletion(habitId, todayKey());
+    mutationFn: async ({
+      habitId,
+      dateKey: key,
+      isDone,
+    }: {
+      habitId: string;
+      dateKey: string;
+      isDone: boolean;
+    }) => {
+      if (isDone) {
+        await unlogHabitCompletion(habitId, key);
       } else {
-        await logHabitCompletion(habitId, todayKey());
+        await logHabitCompletion(habitId, key);
       }
     },
     onSuccess: () => queryClient.invalidateQueries({ queryKey: HABIT_LOGS_KEY }),
   });
+}
+
+export function useToggleHabitToday() {
+  const toggle = useToggleHabitOnDate();
+  return {
+    ...toggle,
+    mutate: ({ habitId, isDoneToday }: { habitId: string; isDoneToday: boolean }) =>
+      toggle.mutate({ habitId, dateKey: todayKey(), isDone: isDoneToday }),
+  };
 }
 
 // Walks backward day-by-day from today (or yesterday, if today isn't logged yet)

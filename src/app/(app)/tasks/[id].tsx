@@ -4,10 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { ActivityIndicator, KeyboardAvoidingView, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { CategoryPicker } from '@/components/CategoryPicker';
 import { DueDateField } from '@/components/DueDateField';
 import { ThemedView } from '@/components/themed-view';
 import { Button } from '@/components/ui/Button';
 import { TextField } from '@/components/ui/TextField';
+import { Category } from '@/constants/categories';
 import { Spacing } from '@/constants/theme';
 import { useDeleteTask, useTasks, useUpdateTask } from '@/hooks/useTasks';
 
@@ -23,12 +25,14 @@ export default function EditTaskScreen() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [dueDate, setDueDate] = useState<Date | null>(null);
+  const [category, setCategory] = useState<Category>('general');
 
   useEffect(() => {
     if (!task) return;
     setTitle(task.title);
     setDescription(task.description ?? '');
     setDueDate(task.due_date ? new Date(task.due_date) : null);
+    setCategory(task.category);
   }, [task]);
 
   if (!task) {
@@ -47,6 +51,7 @@ export default function EditTaskScreen() {
         title: title.trim(),
         description: description.trim() || null,
         due_date: dueDate ? dueDate.toISOString() : null,
+        category,
       },
     });
     router.back();
@@ -73,6 +78,7 @@ export default function EditTaskScreen() {
               style={styles.multiline}
             />
             <DueDateField label={t('tasks.dueDate')} value={dueDate} onChange={setDueDate} />
+            <CategoryPicker label={t('common.category')} value={category} onChange={setCategory} />
             <Button
               title={t('common.save')}
               onPress={handleSave}

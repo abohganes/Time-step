@@ -1,0 +1,158 @@
+{
+  "common": {
+    "save": "Salva",
+    "clear": "Cancella",
+    "titleLabel": "Titolo",
+    "descriptionLabel": "Descrizione",
+    "category": "Categoria"
+  },
+  "categories": {
+    "general": "Generale",
+    "work": "Lavoro",
+    "student": "Studio",
+    "fitness": "Fitness"
+  },
+  "auth": {
+    "welcomeBack": "Bentornato",
+    "email": "Email",
+    "password": "Password",
+    "logIn": "Accedi",
+    "noAccount": "Non hai un account? Registrati",
+    "createAccount": "Crea account",
+    "checkEmail": "Controlla la tua email per confermare l'account, poi accedi.",
+    "signUp": "Registrati",
+    "haveAccount": "Hai già un account? Accedi",
+    "continueWithGoogle": "Continua con Google",
+    "or": "oppure"
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "tasksSection": "Attività",
+    "noTasksToday": "Niente in scadenza oggi.",
+    "habitsSection": "Abitudini",
+    "noHabits": "Ancora nessuna abitudine.",
+    "completedTasks": "Completate",
+    "pendingTasks": "In sospeso",
+    "habitsToday": "Abitudini completate oggi",
+    "focusTimeToday": "Tempo di concentrazione",
+    "focusMinutes": "{{count}} min",
+    "quickActionsTitle": "Azioni rapide",
+    "quickActions": {
+      "assistant": "Assistente IA",
+      "addTask": "Aggiungi attività",
+      "startPomodoro": "Avvia Pomodoro",
+      "viewCalendar": "Vedi calendario"
+    }
+  },
+  "tasks": {
+    "title": "Attività",
+    "empty": "Ancora nessuna attività. Tocca + per aggiungerne una.",
+    "newTitle": "Nuova attività",
+    "editTitle": "Modifica attività",
+    "dueDate": "Data di scadenza",
+    "noDueDate": "Nessuna data di scadenza",
+    "deleteTask": "Elimina attività"
+  },
+  "habits": {
+    "title": "Abitudini",
+    "empty": "Ancora nessuna abitudine. Tocca + per aggiungerne una.",
+    "newTitle": "Nuova abitudine",
+    "editTitle": "Modifica abitudine",
+    "dailyReminder": "Promemoria giornaliero",
+    "noReminder": "Nessun promemoria",
+    "deleteHabit": "Elimina abitudine"
+  },
+  "notes": {
+    "title": "Note",
+    "empty": "Ancora nessuna nota. Tocca + per aggiungerne una.",
+    "untitled": "Senza titolo",
+    "startWriting": "Inizia a scrivere..."
+  },
+  "settings": {
+    "title": "Impostazioni",
+    "signedInAs": "Accesso come",
+    "notifications": "Notifiche",
+    "enabled": "Attivate",
+    "denied": "Negate",
+    "notRequested": "Non richieste",
+    "enableNotifications": "Attiva notifiche",
+    "signOut": "Esci",
+    "language": "Lingua",
+    "appearance": "Aspetto",
+    "themeLight": "Chiaro",
+    "themeDark": "Scuro",
+    "themeSystem": "Sistema",
+    "color": "Colore",
+    "background": "Sfondo",
+    "backgroundNone": "Nessuno",
+    "backgroundClouds": "Nuvole",
+    "backgroundRain": "Pioggia",
+    "backgroundTrees": "Alberi"
+  },
+  "errors": {
+    "somethingWrong": "Qualcosa è andato storto: {{message}}",
+    "failedToLoad": "Caricamento non riuscito"
+  },
+  "notif": {
+    "taskDueTitle": "Attività in scadenza",
+    "habitReminderTitle": "Promemoria abitudine"
+  },
+  "tabs": {
+    "today": "Dashboard",
+    "tasks": "Attività",
+    "habits": "Abitudini",
+    "notes": "Note",
+    "settings": "Impostazioni",
+    "assistant": "Assistente",
+    "pomodoro": "Pomodoro",
+    "more": "Altro",
+    "planner": "Pianificatore",
+    "calendar": "Calendario",
+    "reminders": "Promemoria",
+    "statistics": "Statistiche"
+  },
+  "pomodoro": {
+    "title": "Pomodoro",
+    "workMode": "Tempo di concentrazione",
+    "breakMode": "Tempo di pausa",
+    "sessionsToday": "{{count}} sessioni completate oggi",
+    "presetLabel": "{{work}}/{{break}} min"
+  },
+  "planner": {
+    "title": "Pianificatore",
+    "today": "Oggi"
+  },
+  "calendar": {
+    "title": "Calendario"
+  },
+  "reminders": {
+    "title": "Promemoria",
+    "tasksSection": "Attività in arrivo",
+    "habitsSection": "Promemoria giornalieri delle abitudini",
+    "noUpcomingTasks": "Nessuna attività in arrivo con scadenza.",
+    "noHabitReminders": "Nessun promemoria abitudine impostato.",
+    "dailyAt": "Ogni giorno alle {{time}}"
+  },
+  "statistics": {
+    "title": "Statistiche",
+    "tasksCompleted": "Attività completate (ultimi 7 giorni)",
+    "pomodoroSessions": "Sessioni Pomodoro (ultimi 7 giorni)",
+    "habitStreaks": "Serie di abitudini"
+  },
+  "assistant": {
+    "title": "Assistente",
+    "placeholder": "Chiedimi qualsiasi cosa...",
+    "send": "Invia",
+    "empty": "Chiedimi di pianificare la tua giornata, dare priorità alle attività, o semplicemente saluta.",
+    "clearChat": "Cancella chat",
+    "sendError": "Impossibile contattare l'assistente. Riprova.",
+    "quickActions": {
+      "planDay": "Pianifica la mia giornata",
+      "prioritize": "Aiutami a dare priorità alle mie attività",
+      "breakDown": "Suddividi la mia attività più grande in passi più piccoli",
+      "motivate": "Motivami",
+      "freeTime": "Quanto tempo libero ho oggi?",
+      "analyzeHabits": "Analizza le mie abitudini"
+    }
+  }
+}

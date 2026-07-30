@@ -16,11 +16,20 @@ Notifications.setNotificationHandler({
 
 const storageKey = (kind: 'task' | 'habit', id: string) => `notif:${kind}:${id}`;
 
+// Android locks a channel's sound/vibration once created, so devices that already
+// installed an earlier build (plain "default" channel, no sound/vibration override)
+// won't pick up new settings on that same channel id. Using a new id gives every
+// upgrading device a fresh channel with the settings below.
+export const REMINDER_CHANNEL_ID = 'reminders-v2';
+
 export async function ensureAndroidChannel() {
   if (Platform.OS !== 'android') return;
-  await Notifications.setNotificationChannelAsync('default', {
-    name: 'Default',
+  await Notifications.setNotificationChannelAsync(REMINDER_CHANNEL_ID, {
+    name: 'Reminders',
     importance: Notifications.AndroidImportance.DEFAULT,
+    sound: 'default',
+    enableVibrate: true,
+    vibrationPattern: [0, 250, 250, 250],
   });
 }
 
@@ -52,7 +61,12 @@ export async function scheduleTaskNotification(task: Task) {
   if (!granted) return;
 
   const identifier = await Notifications.scheduleNotificationAsync({
-    content: { title: i18n.t('notif.taskDueTitle'), body: task.title },
+    content: {
+      title: i18n.t('notif.taskDueTitle'),
+      body: task.title,
+      sound: 'default',
+      ...(Platform.OS === 'android' ? { channelId: REMINDER_CHANNEL_ID } : null),
+    },
     trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: dueDate },
   });
   await AsyncStorage.setItem(storageKey('task', task.id), identifier);
@@ -76,7 +90,12 @@ export async function scheduleHabitReminder(habit: Habit) {
   if (!granted) return;
 
   const identifier = await Notifications.scheduleNotificationAsync({
-    content: { title: i18n.t('notif.habitReminderTitle'), body: habit.title },
+    content: {
+      title: i18n.t('notif.habitReminderTitle'),
+      body: habit.title,
+      sound: 'default',
+      ...(Platform.OS === 'android' ? { channelId: REMINDER_CHANNEL_ID } : null),
+    },
     trigger: { type: Notifications.SchedulableTriggerInputTypes.DAILY, hour, minute },
   });
   await AsyncStorage.setItem(storageKey('habit', habit.id), identifier);

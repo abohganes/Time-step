@@ -1,3 +1,4 @@
+import type { Category } from '@/constants/categories';
 import { supabase } from '@/lib/supabase';
 import type { Habit } from '@/types/database';
 
@@ -14,6 +15,7 @@ export type CreateHabitInput = {
   title: string;
   description?: string | null;
   reminder_time?: string | null;
+  category?: Category;
 };
 
 export async function createHabit(input: CreateHabitInput): Promise<Habit> {

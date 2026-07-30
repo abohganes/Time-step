@@ -1,3 +1,5 @@
+import type { Category } from '@/constants/categories';
+
 export type Task = {
   id: string;
   user_id: string;
@@ -6,6 +8,7 @@ export type Task = {
   due_date: string | null;
   is_completed: boolean;
   completed_at: string | null;
+  category: Category;
   created_at: string;
   updated_at: string;
 };
@@ -18,6 +21,7 @@ export type Habit = {
   recurrence: 'daily';
   reminder_time: string | null;
   is_active: boolean;
+  category: Category;
   created_at: string;
   updated_at: string;
 };

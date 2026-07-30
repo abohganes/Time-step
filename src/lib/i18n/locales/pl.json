@@ -1,0 +1,158 @@
+{
+  "common": {
+    "save": "Zapisz",
+    "clear": "Wyczyść",
+    "titleLabel": "Tytuł",
+    "descriptionLabel": "Opis",
+    "category": "Kategoria"
+  },
+  "categories": {
+    "general": "Ogólne",
+    "work": "Praca",
+    "student": "Nauka",
+    "fitness": "Fitness"
+  },
+  "auth": {
+    "welcomeBack": "Witaj ponownie",
+    "email": "E-mail",
+    "password": "Hasło",
+    "logIn": "Zaloguj się",
+    "noAccount": "Nie masz konta? Zarejestruj się",
+    "createAccount": "Utwórz konto",
+    "checkEmail": "Sprawdź swoją pocztę, aby potwierdzić konto, a następnie się zaloguj.",
+    "signUp": "Zarejestruj się",
+    "haveAccount": "Masz już konto? Zaloguj się",
+    "continueWithGoogle": "Kontynuuj z Google",
+    "or": "lub"
+  },
+  "dashboard": {
+    "title": "Pulpit",
+    "tasksSection": "Zadania",
+    "noTasksToday": "Nic na dziś.",
+    "habitsSection": "Nawyki",
+    "noHabits": "Brak nawyków.",
+    "completedTasks": "Ukończone",
+    "pendingTasks": "Oczekujące",
+    "habitsToday": "Nawyki ukończone dziś",
+    "focusTimeToday": "Czas skupienia dziś",
+    "focusMinutes": "{{count}} min",
+    "quickActionsTitle": "Szybkie akcje",
+    "quickActions": {
+      "assistant": "Asystent AI",
+      "addTask": "Dodaj zadanie",
+      "startPomodoro": "Uruchom Pomodoro",
+      "viewCalendar": "Zobacz kalendarz"
+    }
+  },
+  "tasks": {
+    "title": "Zadania",
+    "empty": "Brak zadań. Dotknij +, aby dodać nowe.",
+    "newTitle": "Nowe zadanie",
+    "editTitle": "Edytuj zadanie",
+    "dueDate": "Termin",
+    "noDueDate": "Brak terminu",
+    "deleteTask": "Usuń zadanie"
+  },
+  "habits": {
+    "title": "Nawyki",
+    "empty": "Brak nawyków. Dotknij +, aby dodać nowy.",
+    "newTitle": "Nowy nawyk",
+    "editTitle": "Edytuj nawyk",
+    "dailyReminder": "Codzienne przypomnienie",
+    "noReminder": "Brak przypomnienia",
+    "deleteHabit": "Usuń nawyk"
+  },
+  "notes": {
+    "title": "Notatki",
+    "empty": "Brak notatek. Dotknij +, aby dodać nową.",
+    "untitled": "Bez tytułu",
+    "startWriting": "Zacznij pisać..."
+  },
+  "settings": {
+    "title": "Ustawienia",
+    "signedInAs": "Zalogowano jako",
+    "notifications": "Powiadomienia",
+    "enabled": "Włączone",
+    "denied": "Odrzucone",
+    "notRequested": "Nie zażądano",
+    "enableNotifications": "Włącz powiadomienia",
+    "signOut": "Wyloguj się",
+    "language": "Język",
+    "appearance": "Wygląd",
+    "themeLight": "Jasny",
+    "themeDark": "Ciemny",
+    "themeSystem": "Systemowy",
+    "color": "Kolor",
+    "background": "Tło",
+    "backgroundNone": "Brak",
+    "backgroundClouds": "Chmury",
+    "backgroundRain": "Deszcz",
+    "backgroundTrees": "Drzewa"
+  },
+  "errors": {
+    "somethingWrong": "Coś poszło nie tak: {{message}}",
+    "failedToLoad": "Nie udało się załadować"
+  },
+  "notif": {
+    "taskDueTitle": "Zadanie do wykonania",
+    "habitReminderTitle": "Przypomnienie o nawyku"
+  },
+  "tabs": {
+    "today": "Pulpit",
+    "tasks": "Zadania",
+    "habits": "Nawyki",
+    "notes": "Notatki",
+    "settings": "Ustawienia",
+    "assistant": "Asystent",
+    "pomodoro": "Pomodoro",
+    "more": "Więcej",
+    "planner": "Planer",
+    "calendar": "Kalendarz",
+    "reminders": "Przypomnienia",
+    "statistics": "Statystyki"
+  },
+  "pomodoro": {
+    "title": "Pomodoro",
+    "workMode": "Czas skupienia",
+    "breakMode": "Czas przerwy",
+    "sessionsToday": "Dzisiaj ukończono {{count}} sesji",
+    "presetLabel": "{{work}}/{{break}} min"
+  },
+  "planner": {
+    "title": "Planer",
+    "today": "Dziś"
+  },
+  "calendar": {
+    "title": "Kalendarz"
+  },
+  "reminders": {
+    "title": "Przypomnienia",
+    "tasksSection": "Nadchodzące zadania",
+    "habitsSection": "Codzienne przypomnienia o nawykach",
+    "noUpcomingTasks": "Brak nadchodzących zadań z terminem.",
+    "noHabitReminders": "Nie ustawiono przypomnień o nawykach.",
+    "dailyAt": "Codziennie o {{time}}"
+  },
+  "statistics": {
+    "title": "Statystyki",
+    "tasksCompleted": "Ukończone zadania (ostatnie 7 dni)",
+    "pomodoroSessions": "Sesje Pomodoro (ostatnie 7 dni)",
+    "habitStreaks": "Serie nawyków"
+  },
+  "assistant": {
+    "title": "Asystent",
+    "placeholder": "Zapytaj mnie o cokolwiek...",
+    "send": "Wyślij",
+    "empty": "Poproś mnie o zaplanowanie dnia, ustalenie priorytetów zadań, albo po prostu przywitaj się.",
+    "clearChat": "Wyczyść czat",
+    "sendError": "Nie można połączyć się z asystentem. Spróbuj ponownie.",
+    "quickActions": {
+      "planDay": "Zaplanuj mój dzień",
+      "prioritize": "Pomóż mi ustalić priorytety zadań",
+      "breakDown": "Podziel moje największe zadanie na mniejsze kroki",
+      "motivate": "Zmotywuj mnie",
+      "freeTime": "Ile mam dziś wolnego czasu?",
+      "analyzeHabits": "Przeanalizuj moje nawyki"
+    }
+  }
+}

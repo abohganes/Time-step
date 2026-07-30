@@ -3,7 +3,14 @@
     "save": "Enregistrer",
     "clear": "Effacer",
     "titleLabel": "Titre",
-    "descriptionLabel": "Description"
+    "descriptionLabel": "Description",
+    "category": "Catégorie"
+  },
+  "categories": {
+    "general": "Général",
+    "work": "Travail",
+    "student": "Études",
+    "fitness": "Fitness"
   },
   "auth": {
     "welcomeBack": "Bon retour",
@@ -25,7 +32,17 @@
     "habitsSection": "Habitudes",
     "noHabits": "Aucune habitude pour le moment.",
     "completedTasks": "Terminées",
-    "pendingTasks": "En attente"
+    "pendingTasks": "En attente",
+    "habitsToday": "Habitudes faites aujourd'hui",
+    "focusTimeToday": "Temps de concentration",
+    "focusMinutes": "{{count}} min",
+    "quickActionsTitle": "Actions rapides",
+    "quickActions": {
+      "assistant": "Assistant IA",
+      "addTask": "Ajouter une tâche",
+      "startPomodoro": "Démarrer Pomodoro",
+      "viewCalendar": "Voir le calendrier"
+    }
   },
   "tasks": {
     "title": "Tâches",
@@ -64,7 +81,13 @@
     "appearance": "Apparence",
     "themeLight": "Clair",
     "themeDark": "Sombre",
-    "themeSystem": "Système"
+    "themeSystem": "Système",
+    "color": "Couleur",
+    "background": "Arrière-plan",
+    "backgroundNone": "Aucun",
+    "backgroundClouds": "Nuages",
+    "backgroundRain": "Pluie",
+    "backgroundTrees": "Arbres"
   },
   "errors": {
     "somethingWrong": "Une erreur s'est produite : {{message}}",
@@ -80,7 +103,41 @@
     "habits": "Habitudes",
     "notes": "Notes",
     "settings": "Réglages",
-    "assistant": "Assistant"
+    "assistant": "Assistant",
+    "pomodoro": "Pomodoro",
+    "more": "Plus",
+    "planner": "Planning",
+    "calendar": "Calendrier",
+    "reminders": "Rappels",
+    "statistics": "Statistiques"
+  },
+  "pomodoro": {
+    "title": "Pomodoro",
+    "workMode": "Temps de concentration",
+    "breakMode": "Temps de pause",
+    "sessionsToday": "{{count}} séances terminées aujourd'hui",
+    "presetLabel": "{{work}}/{{break}} min"
+  },
+  "planner": {
+    "title": "Planning",
+    "today": "Aujourd'hui"
+  },
+  "calendar": {
+    "title": "Calendrier"
+  },
+  "reminders": {
+    "title": "Rappels",
+    "tasksSection": "Tâches à venir",
+    "habitsSection": "Rappels d'habitudes quotidiens",
+    "noUpcomingTasks": "Aucune tâche à venir avec une échéance.",
+    "noHabitReminders": "Aucun rappel d'habitude défini.",
+    "dailyAt": "Chaque jour à {{time}}"
+  },
+  "statistics": {
+    "title": "Statistiques",
+    "tasksCompleted": "Tâches terminées (7 derniers jours)",
+    "pomodoroSessions": "Séances Pomodoro (7 derniers jours)",
+    "habitStreaks": "Séries d'habitudes"
   },
   "assistant": {
     "title": "Assistant",

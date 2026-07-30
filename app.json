@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Life Management",
+    "name": "Time step",
     "slug": "notion-tasks-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,7 +17,7 @@
     "android": {
       "package": "com.notiontasksapp.app",
       "adaptiveIcon": {
-        "backgroundColor": "#0061FA",
+        "backgroundColor": "#FFFFFF",
         "foregroundImage": "./assets/images/android-icon-foreground.png",
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"

@@ -2,6 +2,7 @@ import { format, isPast } from 'date-fns';
 import { Pressable, StyleSheet, View } from 'react-native';
 import Animated, { FadeIn } from 'react-native-reanimated';
 
+import { CategoryDot } from '@/components/CategoryPicker';
 import { ThemedText } from '@/components/themed-text';
 import { Checkbox } from '@/components/ui/Checkbox';
 import { CardShadow, Radius, Spacing } from '@/constants/theme';
@@ -35,12 +36,15 @@ export function TaskRow({ task, onToggle, onPress }: TaskRowProps) {
         ]}>
         <Checkbox checked={task.is_completed} onToggle={onToggle} />
         <View style={styles.textContainer}>
-          <ThemedText
-            type="default"
-            style={task.is_completed ? styles.completed : undefined}
-            numberOfLines={1}>
-            {task.title}
-          </ThemedText>
+          <View style={styles.titleRow}>
+            <CategoryDot category={task.category} />
+            <ThemedText
+              type="default"
+              style={task.is_completed ? styles.completed : undefined}
+              numberOfLines={1}>
+              {task.title}
+            </ThemedText>
+          </View>
           {task.due_date ? (
             <ThemedText
               type="small"
@@ -65,5 +69,6 @@ const styles = StyleSheet.create({
     borderWidth: 1,
   },
   textContainer: { flex: 1, gap: 2 },
+  titleRow: { flexDirection: 'row', alignItems: 'center', gap: Spacing.two },
   completed: { textDecorationLine: 'line-through', opacity: 0.5 },
 });

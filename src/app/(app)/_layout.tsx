@@ -48,13 +48,7 @@ export default function AppLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="habits"
-        options={{
-          title: t('tabs.habits'),
-          tabBarIcon: ({ color, size }) => <Ionicons name="flame-outline" size={size} color={color} />,
-        }}
-      />
+      <Tabs.Screen name="habits" options={{ href: null }} />
       <Tabs.Screen
         name="notes"
         options={{
@@ -64,13 +58,19 @@ export default function AppLayout() {
           ),
         }}
       />
+      <Tabs.Screen name="pomodoro" options={{ href: null }} />
       <Tabs.Screen
-        name="assistant"
+        name="calendar"
         options={{
-          title: t('tabs.assistant'),
-          tabBarIcon: ({ color, size }) => <Ionicons name="sparkles-outline" size={size} color={color} />,
+          title: t('tabs.calendar'),
+          tabBarIcon: ({ color, size }) => <Ionicons name="calendar-outline" size={size} color={color} />,
         }}
       />
+      <Tabs.Screen name="more" options={{ href: null }} />
+      <Tabs.Screen name="planner" options={{ href: null }} />
+      <Tabs.Screen name="reminders" options={{ href: null }} />
+      <Tabs.Screen name="statistics" options={{ href: null }} />
+      <Tabs.Screen name="assistant" options={{ href: null }} />
       <Tabs.Screen
         name="settings"
         options={{

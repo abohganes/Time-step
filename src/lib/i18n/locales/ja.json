@@ -1,0 +1,158 @@
+{
+  "common": {
+    "save": "保存",
+    "clear": "クリア",
+    "titleLabel": "タイトル",
+    "descriptionLabel": "説明",
+    "category": "カテゴリー"
+  },
+  "categories": {
+    "general": "一般",
+    "work": "仕事",
+    "student": "学業",
+    "fitness": "フィットネス"
+  },
+  "auth": {
+    "welcomeBack": "おかえりなさい",
+    "email": "メールアドレス",
+    "password": "パスワード",
+    "logIn": "ログイン",
+    "noAccount": "アカウントをお持ちでない方はこちら",
+    "createAccount": "アカウントを作成",
+    "checkEmail": "メールを確認してアカウントを認証してからログインしてください。",
+    "signUp": "登録",
+    "haveAccount": "すでにアカウントをお持ちの方はこちら",
+    "continueWithGoogle": "Googleで続ける",
+    "or": "または"
+  },
+  "dashboard": {
+    "title": "ダッシュボード",
+    "tasksSection": "タスク",
+    "noTasksToday": "今日の予定はありません。",
+    "habitsSection": "習慣",
+    "noHabits": "まだ習慣がありません。",
+    "completedTasks": "完了",
+    "pendingTasks": "未完了",
+    "habitsToday": "今日完了した習慣",
+    "focusTimeToday": "今日の集中時間",
+    "focusMinutes": "{{count}} 分",
+    "quickActionsTitle": "クイックアクション",
+    "quickActions": {
+      "assistant": "AIアシスタント",
+      "addTask": "タスクを追加",
+      "startPomodoro": "ポモドーロを開始",
+      "viewCalendar": "カレンダーを見る"
+    }
+  },
+  "tasks": {
+    "title": "タスク",
+    "empty": "まだタスクがありません。+をタップして追加してください。",
+    "newTitle": "新しいタスク",
+    "editTitle": "タスクを編集",
+    "dueDate": "期限",
+    "noDueDate": "期限なし",
+    "deleteTask": "タスクを削除"
+  },
+  "habits": {
+    "title": "習慣",
+    "empty": "まだ習慣がありません。+をタップして追加してください。",
+    "newTitle": "新しい習慣",
+    "editTitle": "習慣を編集",
+    "dailyReminder": "毎日のリマインダー",
+    "noReminder": "リマインダーなし",
+    "deleteHabit": "習慣を削除"
+  },
+  "notes": {
+    "title": "メモ",
+    "empty": "まだメモがありません。+をタップして追加してください。",
+    "untitled": "無題",
+    "startWriting": "書き始める..."
+  },
+  "settings": {
+    "title": "設定",
+    "signedInAs": "ログイン中のアカウント",
+    "notifications": "通知",
+    "enabled": "有効",
+    "denied": "拒否",
+    "notRequested": "未リクエスト",
+    "enableNotifications": "通知を有効にする",
+    "signOut": "ログアウト",
+    "language": "言語",
+    "appearance": "外観",
+    "themeLight": "ライト",
+    "themeDark": "ダーク",
+    "themeSystem": "システム",
+    "color": "カラー",
+    "background": "背景",
+    "backgroundNone": "なし",
+    "backgroundClouds": "雲",
+    "backgroundRain": "雨",
+    "backgroundTrees": "木"
+  },
+  "errors": {
+    "somethingWrong": "エラーが発生しました：{{message}}",
+    "failedToLoad": "読み込みに失敗しました"
+  },
+  "notif": {
+    "taskDueTitle": "タスクの期限",
+    "habitReminderTitle": "習慣のリマインダー"
+  },
+  "tabs": {
+    "today": "ダッシュボード",
+    "tasks": "タスク",
+    "habits": "習慣",
+    "notes": "メモ",
+    "settings": "設定",
+    "assistant": "アシスタント",
+    "pomodoro": "ポモドーロ",
+    "more": "その他",
+    "planner": "プランナー",
+    "calendar": "カレンダー",
+    "reminders": "リマインダー",
+    "statistics": "統計"
+  },
+  "pomodoro": {
+    "title": "ポモドーロ",
+    "workMode": "集中タイム",
+    "breakMode": "休憩タイム",
+    "sessionsToday": "今日は{{count}}セッション完了しました",
+    "presetLabel": "{{work}}/{{break}} 分"
+  },
+  "planner": {
+    "title": "プランナー",
+    "today": "今日"
+  },
+  "calendar": {
+    "title": "カレンダー"
+  },
+  "reminders": {
+    "title": "リマインダー",
+    "tasksSection": "今後のタスク",
+    "habitsSection": "毎日の習慣リマインダー",
+    "noUpcomingTasks": "期限付きの今後のタスクはありません。",
+    "noHabitReminders": "習慣リマインダーが設定されていません。",
+    "dailyAt": "毎日 {{time}}"
+  },
+  "statistics": {
+    "title": "統計",
+    "tasksCompleted": "完了したタスク（過去7日間）",
+    "pomodoroSessions": "ポモドーロセッション（過去7日間）",
+    "habitStreaks": "習慣の連続記録"
+  },
+  "assistant": {
+    "title": "アシスタント",
+    "placeholder": "何でも聞いてください...",
+    "send": "送信",
+    "empty": "1日の計画やタスクの優先順位付けを頼んだり、気軽に挨拶してみてください。",
+    "clearChat": "チャットを消去",
+    "sendError": "アシスタントに接続できませんでした。もう一度お試しください。",
+    "quickActions": {
+      "planDay": "今日の計画を立てる",
+      "prioritize": "タスクの優先順位を手伝って",
+      "breakDown": "一番大きなタスクを小さく分割して",
+      "motivate": "やる気を出させて",
+      "freeTime": "今日の空き時間はどれくらい？",
+      "analyzeHabits": "習慣を分析して"
+    }
+  }
+}

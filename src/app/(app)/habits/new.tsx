@@ -4,10 +4,12 @@ import { useTranslation } from 'react-i18next';
 import { KeyboardAvoidingView, Platform, StyleSheet } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { CategoryPicker } from '@/components/CategoryPicker';
 import { ReminderTimeField } from '@/components/ReminderTimeField';
 import { ThemedView } from '@/components/themed-view';
 import { Button } from '@/components/ui/Button';
 import { TextField } from '@/components/ui/TextField';
+import { Category } from '@/constants/categories';
 import { Spacing } from '@/constants/theme';
 import { useCreateHabit } from '@/hooks/useHabits';
 
@@ -18,6 +20,7 @@ export default function NewHabitScreen() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [reminderTime, setReminderTime] = useState<string | null>(null);
+  const [category, setCategory] = useState<Category>('general');
 
   async function handleSave() {
     if (!title.trim()) return;
@@ -25,6 +28,7 @@ export default function NewHabitScreen() {
       title: title.trim(),
       description: description.trim() || null,
       reminder_time: reminderTime,
+      category,
     });
     router.back();
   }
@@ -49,6 +53,7 @@ export default function NewHabitScreen() {
               value={reminderTime}
               onChange={setReminderTime}
             />
+            <CategoryPicker label={t('common.category')} value={category} onChange={setCategory} />
             <Button
               title={t('common.save')}
               onPress={handleSave}
